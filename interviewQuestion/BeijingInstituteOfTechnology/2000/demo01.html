@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!--  输入任意4个字符(如：abcd)，并按反序输出(如：dcba) -->
+  </head>
+  <body>
+    <script type="text/javascript">
+      var str = 'abcd';
+      String.prototype.reverse = function(){
+        var a=[];
+        for (var i = 0; i < str.length; i++) {
+          a.unshift(str[i]); //向数组的前面插入元素
+        }
+        // return a.join(); //数组转化为字符串
+        return a.toString(); //数组转化为字符串  返回值与没有参数的 join() 方法返回的字符串相同。
+      }
+      console.log(str.reverse());
+    </script>
+  </body>
+</html>

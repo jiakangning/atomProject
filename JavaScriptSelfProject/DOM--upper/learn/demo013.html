@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>查找元素</title>
+</head>
+<body>
+  <div id="myDiv">Some text</div>
+  <script type="text/javascript">
+    /*
+说到最常见的 DOM 应用，恐怕就要数取得特定的某个或某组元素的引用，然后再执行一些操作了。
+取得元素的操作可以使用 document 对象的几个方法来完成。
+其中，Document 类型为此提供了两个方法：getElementById() 和 getElementsByTagName()。
+第一个方法，getElementById()，接收一个参数：要取得的元素的 ID。如果找到相应的元素则返回该元素，如果不存在带有相应 ID 的元素，
+则返回 null。注意，这里的 ID 必须与页面中元素的 id 特性（attribute）严格匹配，包括大小写。以下面的元素为例。
+
+    */
+    var div = document.getElementById("myDiv");   // 取得<div>元素的引用
+    // 但是，下面的代码在除 IE7 及更早版本之外的所有浏览器中都将返回 null。
+
+var div2 = document.getElementById("mydiv");   // 无效的ID（在IE7及更早版本中可以）
+console.log(div2);
+
+/*
+E8 及较低版本不区分 ID 的大小写，因此 "myDiv" 和 "mydiv" 会被当作相同的元素 ID。如果页面中多个元素的ID值相同，getElementById() 只返回文档中第一次出现的元素。
+
+另一个常用于取得元素引用的方法是 getElementsByTagName()。
+这个方法接受一个参数，即要取得元素的标签名，而返回的是包含零或多个元素的 NodeList。
+在HTML文档中，这个方法会返回一个HTMLCollection 对象，作为一个“动态”集合，
+该对象与 NodeList非常类似。例如，下列代码会取得页面中所有的 <img> 元素，并返回一个 HTMLCollection。
+
+*/
+  </script>
+</body>
+</html>

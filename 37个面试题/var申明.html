@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>var 申明</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      (function (){
+        var a = b = 3;
+      })()
+      console.log('a is undefined?'+ (typeof a == 'undefined'));
+      console.log('b is undefined?'+ (typeof b == 'undefined'));
+    </script>
+  </body>
+</html>

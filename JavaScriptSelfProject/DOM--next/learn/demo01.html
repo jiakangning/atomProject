@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Element 类型</title>
+</head>
+<body>
+  <div id="mydiv"></div>
+  <script type="text/javascript">
+    var div =document.getElementById('mydiv');
+    console.log(div.tagName);//DIV
+    console.log(div.nodeName);//DIV
+    console.log(div.tagName === div.nodeName);//true
+  </script>
+</body>
+</html>

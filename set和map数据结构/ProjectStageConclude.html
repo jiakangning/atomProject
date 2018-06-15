@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>小阶段项目总结</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+      Set 结构的实例有以下属性。
+
+      Set.prototype.constructor：构造函数，默认就是Set函数。
+      Set.prototype.size：返回Set实例的成员总数。
+      Set 实例的方法分为两大类：操作方法（用于操作数据）和遍历方法（用于遍历成员）。下面先介绍四个操作方法。
+
+      add(value)：添加某个值，返回 Set 结构本身。
+      delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。
+      has(value)：返回一个布尔值，表示该值是否为Set的成员。
+      clear()：清除所有成员，没有返回值。
+      */
+      // 例01
+      // let s=new Set();
+      // s.add(1).add(2).add(2).add(2)
+      // // 2被加了俩次
+      // console.log(s.size);
+      // console.log(s.has(1)); //true
+      // console.log(s.has(3)); // false
+      //
+      // console.log(s.delete(3)); //false 找不到3这个元素
+      // console.log(s.delete(2));//true 删除成功
+      // console.log(s.size); // 长度为1
+      // console.log(s.has(2)); //返回false找不到已被删除了的元素2
+
+
+      //例02
+
+      //对象写法：
+      // const properties = {
+      //   'width':1,
+      //   'height':1
+      // };
+      // if (properties['height']) {
+      //   console.log(properties['width']+'进来了');
+      // }else{
+      //   console.log('失败了！');
+      // }
+
+      //set写法
+      // const properties = new Set();
+      // properties.add('width');
+      // properties.add('height');
+      // if (properties.has('width')) {
+      //   console.log('成功了');
+      // }
+
+      //Array.from方法可将set结构转换为数组
+      const items=new Set([10,22,514,44,96,63]);
+      console.log(items);
+      const array = Array.from(items);
+      console.log(array);
+    </script>
+  </body>
+</html>

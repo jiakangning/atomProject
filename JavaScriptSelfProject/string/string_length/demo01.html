@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Js中的字符串长度</title>
+</head>
+<body>
+  <script type="text/javascript">
+    String.prototype.lengthSingle = function () {
+      var b= 0;
+      var l = this.length;
+      if (l) {
+        for (var i = 0; i < l; i++) {
+          if (this.charCodeAt(i)>255) {
+            console.log('此为双字节');
+            b+=2;
+          }
+          else {
+            console.log('此为单字节');
+            b++;
+          }
+        }
+        return b;
+      }
+      else {
+        return 0;
+      }
+    }
+    var str = new String('我是双字节');
+    console.log(str.lengthSingle());
+    var str2 = 'i am singleString!';
+    console.log(str2.lengthSingle());
+    var str3 = '我是双字节，and i am also the singleString!';
+    console.log(str3.lengthSingle());
+  </script>
+</body>
+</html>

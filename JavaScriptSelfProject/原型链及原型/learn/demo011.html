@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>理解原型对象</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+  /*
+*尽管可以随时为原型添加属性和方法，并且修改能够立即在所有对象实例中反映出来，
+但如果是重写整个原型对象，那么情况就不一样了。
+我们知道，调用构造函数时会为实例添加一个指向最初原型的 [[Prototype]] 指针，
+而把原型修改为另外一个对象就等于切断了构造函数与最初原型之间的联系。
+请记住：实例中的指针仅指向原型，而不指向构造函数。看下面的例子。
+*
+*
+*
+  */
+  function Person(){}
+
+
+
+Person.prototype = {
+    constructor: Person,
+    name : "Stone",
+    age : 28,
+    job : "Software Engineer",
+    sayName : function () {
+        console.log(this.name);
+    }
+};
+var friend = new Person();
+friend.sayName();   // Stone
+// 在这个例子中，我们先创建了 Person 的一个实例，然后又重写了其原型对象。
+// 然后在调用 friend.sayName() 时发生了错误，因为 friend 指向的是重写前的原型对象，其中并不包含以该名字命名的属性。
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>对象的继承--es6</title>
+</head>
+<body>
+  <script type="text/javascript">
+  var name = '张三',
+      sex = 'male',
+      age = 25;
+    var person = {
+      name,
+      sex,
+      age,
+      showAge: function () {
+        alert(this.age);
+      },
+      showSex: function () {
+        alert(this.sex);
+      }
+    }
+    person.showAge()
+    person.showSex()
+  </script>
+</body>
+</html>

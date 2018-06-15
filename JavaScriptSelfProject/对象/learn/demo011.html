@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>检测属性</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+    propertyIsEnumerable() 是 hasOwnProperty() 的增强版，
+    只有检测到是自有属性且这个属性的可枚举性（enumerable attribute）为 true 时它才返回 true。
+    某些内置属性是不可枚举的。通常由 JavaScript 代码创建的属性都是可枚举的，除非在 ECMAScript 5 中使用一个特殊的方法来改变属性的可枚举性。例如：
+    */
+
+    var o = { x: 1 }
+console.log(o.x !== undefined);              // true，x是o的属性
+console.log(o.y !== undefined);              // false，y不是o的属性
+console.log(o.toString !== undefined);       // true，toString是继承属性
+
+  </script>
+</body>
+</html>

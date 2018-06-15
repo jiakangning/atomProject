@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>鼠标拖拽高级</title>
+  <style media="screen">
+  html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+    #drag{
+      margin: 0;
+      padding: 0;
+      width: 100px;
+      height: 100px;
+      background: red url() 0 0 no-repeat;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="drag">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, ratione.
+  </div>
+  p{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque pariatur, possimus dolorem!}
+  <script type="text/javascript">
+    var dom = document.getElementById('drag');
+
+    var offsetX= 0;
+    var offsetY= 0;
+    var W = window.innerWidth-dom.offsetWidth;
+    var H = window.innerHeight-dom.offsetHeight;
+    console.log(W);
+    var ismove = false;
+    dom.addEventListener('mousedown',function (ev) {
+      var ev = ev || window.event;
+       offsetX = ev.clientX - this.offsetLeft;
+       offsetY = ev.clientY - this.offsetTop;
+       ismove = true;
+       return false;
+    })
+    document.onmousemove = function (ev){
+      var tempX = 0;
+      var tempY = 0;
+      var ev = ev || window.event;
+      if (ismove) {
+        tempX = ev.clientX - offsetX;
+        tempY = ev.clientY - offsetY;
+        tempX = tempX > W-30 ? W : tempX < 30 ? 0 : tempX;
+        tempY = tempY > H-30 ? H : tempY < 30 ? 0 : tempY;
+        dom.style.left = tempX +'px';
+        dom.style.top = tempY +'px';
+      }
+      if (dom.setCapture) {
+        dom.setCapture();
+      }
+      return false;
+    }
+    document.onmouseup = function (ev){
+      ismove = false;
+      if (dom.releaseCapture) {
+        dom.releaseCapture();
+      }
+    }
+
+  </script>
+</body>
+</html>

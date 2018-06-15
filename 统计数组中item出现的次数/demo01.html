@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>demo</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      console.time();
+      function count(arr,item) {
+        var count = 0;
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i]==item) {
+            count++;
+          }
+        }
+        return count;
+      }
+      console.log(count([12,15,6,5,4,684,984,984,65,46,498,4],12));
+      console.timeEnd(); //default: 2.184814453125ms
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>操作方法--slice</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+
+它能够基于当前数组中的一或多个项创建一个新数组。slice() 方法可以接受一或两个参数，即要返回项的起始和结束位置。
+在只有一个参数的情况下，slice() 方法返回从该参数指定位置开始到当前数组末尾的所有项。
+如果有两个参数，该方法返回起始和结束位置之间的项，但不包括结束位置的项。注意，slice() 方法不会影响原始数组。例如：
+    */
+var colors = ['red','green','blue'];
+var colors2 = colors.slice(1);
+var colors3 = colors.slice(1,2);
+console.log(colors);//保值不变
+console.log(colors2);//把 ‘green blue’ delete
+console.log(colors3);//把'green' delete
+console.log(colors);//slice 不改变原数组
+  </script>
+</body>
+</html>

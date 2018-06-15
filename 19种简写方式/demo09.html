@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>提取JSON数据</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 1.函数多个返回值
+      function example(){
+        return [1,2,3];
+      }
+      var [a,b,c] = example();
+      console.log(a,b,c);
+      // 2.提取JSON数据
+      var jsonData = {
+        id:42,
+        status:'OK',
+        data:[867,234]
+      }
+      let {id,status,data} = jsonData;
+      console.log(id,status,data);
+    </script>
+  </body>
+</html>

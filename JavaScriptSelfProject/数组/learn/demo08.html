@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>foreach</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // 但由于 for-in 循环能够枚举继承的属性名，
+    // 如添加到 Array.prototype 中的方法。基于这个原因，
+    // 在数组上不应该使用 for-in 循环，除非使用额外的检测方法来过滤不想要的属性。例如：
+  var data = [1,2,3,4,5];
+  var sumOfSquares = 0;
+  data.forEach(function (x){
+    sumOfSquares += x*x;
+  })
+  console.log(sumOfSquares);
+  </script>
+</body>
+</html>

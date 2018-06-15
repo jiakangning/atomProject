@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html5圆形</title>
+    <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    html,body{
+      width:100%;
+      height: 100%;
+      /* overflow: hidden; */
+    }
+      canvas{
+        display: block;
+        background: #000 url() 0 0 no-repeat;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function (){
+       class Particle {
+         constructor(opt) {
+           this.ctx = canvas.getContext('2d');
+           this.allNumber = 200;
+           this.list = [];
+           canvas.style.width = opt.cw+'px';
+           canvas.style.height = opt.ch+'px';
+           this.cW = opt.cw;
+           this.cH = opt.ch;
+         }
+         init (){
+           for (var i = 0; i < this.allNumber; i++) {
+             this.list[i] = {
+               x : this.random(0,this.cW),
+               y : this.random(0,this.cH),
+               ax: Math.random()*0.3,
+               ay: Math.random()*0.3
+             }
+             this.drawArc(this.list[i].x,this.list[i].y);
+           }
+
+         }
+         drawArc (x,y){
+           this.ctx.save();
+           this.ctx.beginPath();
+           this.ctx.arc(x,y,1,0,2*Math.PI,false);
+           this.ctx.fillStyle = '#ccc';
+           this.ctx.fill();
+           this.ctx.closePath();
+           this.ctx.restore();
+         }
+         drawLine (Sx,Sy,Ex,Ey){
+           var color = this.ctx.createLinearGradient(Sx,Sy,Ex,Ey);
+           color.addColorStop(0,'red');
+           color.addColorStop(0.5,'green');
+           color.addColorStop(0,'yellow');
+           this.ctx.save();
+           this.ctx.beginPath();
+           this.ctx.moveTo(Sx,Sy);
+           this.ctx.lineTo(Ex,Ey);
+           this.ctx.strokeStyle = color;
+           this.ctx.closePath();
+           this.ctx.restore();
+         }
+         move (){
+           this.ctx.clearRect(0,0,this.cW,this.cH);
+           for (var i = 0; i < this.allNumber; i++) {
+             if (this.list[i].x <0 || this.list[i].x > this.cW) {
+               console.log(1);
+               this.list[i].ax = - this.list[i].ax;
+             }
+             if (this.list[i].y <0 || this.list[i].y > this.cH) {
+               console.log(2);
+               this.list[i].ay =  -this.list[i].ay;
+             }
+             this.list[i].x += this.list[i].ax;
+             this.list[i].y += this.list[i].ay;
+             this.drawArc(this.list[i].x,this.list[i].y);
+             for (var j = i+1; j < this.allNum; j++) {
+               if (Math.pow((this.list[i].x - this.list[j].x),2)+Math.pow((this.list[i].y-this.list[j].y),2) <= 20*20) {
+                 this.drawLine(this.list[i].x,this.list[i].y,this.listArr[j].x,this.list[j].y);
+               }
+             }
+           }
+         }
+         random (min,max){
+           return Math.random()*(max-min+1)+min
+         }
+       }
+
+      var app =  new Particle({
+        cw:window.innerWidth,
+        ch:window.innerHeight
+      });
+      app.init();
+      setInterval(function (){
+        app.move();
+      },30)
+      }
+    </script>
+</head>
+<body>
+
+    <canvas id="canvas" ></canvas>
+</body>
+</html>

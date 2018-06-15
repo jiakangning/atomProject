@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>正则表达式  -- 定义</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // 推荐写法
+  var expression = / pattern / flags ;
+
+  // 不推荐写法
+  var expression = new RegExp(pattern, flags);
+
+  /*
+其中的模式（pattern）部分，是包含在一对斜杠 / 之间的字符，
+可以是任何简单或复杂的正则表达式，可以包含字符类、限定符、分组、向前查找以及反向引用。
+每个正则表达式都可带有一或多个标志（flags），
+用以标明正则表达式的行为。正则表达式的匹配模式支持下列3个标志。
+
+主要 flags
+g：表示全局（global）模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止；
+i：表示不区分大小写（case-insensitive）模式，即在确定匹配项时忽略模式与字符串的大小写；
+m：表示多行（multiline）模式，即在到达一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项。
+  */
+
+  </script>
+</body>
+</html>

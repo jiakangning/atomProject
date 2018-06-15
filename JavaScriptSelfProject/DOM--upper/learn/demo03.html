@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>nodeName 和 nodeValue 属性</title>
+</head>
+<body>
+  <!--
+DOM 可以将任何 HTML 或 XML 文档描绘成一个由多层节点构成的结构。
+节点分为几种不同的类型，每种类型分别表示文档中不同的信息及（或）标记。
+每个节点都拥有各自的特点、数据和方法，另外也与其他节点存在某种关系。
+节点之间的关系构成了层次，而所有页面标记则表现为一个以特定节点为根节点的树形结构。
+以下面的 HTML 为例：
+ -->
+<div class="" id="test">
+<input type="text" name="" value="" id="inp">
+</div>
+ <script type="text/javascript">
+ /*
+ Node.ELEMENT_NODE(1)；
+ Node.ATTRIBUTE_NODE(2)；
+ Node.TEXT_NODE(3)；
+ Node.CDATA_SECTION_NODE(4)；
+ Node.ENTITY_REFERENCE_NODE(5)；
+ Node.ENTITY_NODE(6)；
+ Node.PROCESSING_INSTRUCTION_NODE(7)；
+ Node.COMMENT_NODE(8)；
+ Node.DOCUMENT_NODE(9)；
+ Node.DOCUMENT_TYPE_NODE(10)；
+ Node.DOCUMENT_FRAGMENT_NODE(11)；
+ Node.NOTATION_NODE(12)。
+
+ */
+   var test = document.getElementById('test');
+   var inp =document.getElementById('inp');
+   if (inp.nodeType == 1) {
+     inp.value = inp.nodeName;
+   }
+ </script>
+</body>
+</html>

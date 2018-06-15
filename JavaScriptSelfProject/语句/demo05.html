@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>关卡四</title>
+</head>
+<body>
+  <script type="text/javascript">
+  function showCase(value) {
+    /*
+    case 和它所关联的值成为Case标号。
+    如果程序发现匹配的case标号，则程序从标号后面的第一个语句开始依次执行各个程序，直到遇到break为止。
+    如果 程序匹配了一个case 标号，执行其相关联的语句后 并没有遇到break
+         那么，程序会跨越其之后的case标号，直接继续执行后续标号关联的语句。
+    */
+    switch (value) {
+        case 'A':
+            console.log('Case A'); //            break;
+
+        case 'B':
+            console.log('Case B');
+            break;
+        case undefined:
+            console.log('undefined');
+            break;
+        default:
+            console.log('Do not know!');
+    }
+}
+console.log(typeof String('A'));
+showCase(String('A'));   // case a case b
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>1、使用 typeof bar === "object" 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let obj ={};
+      let arr = [];
+      console.log(typeof obj == 'object');
+      console.log(typeof arr == 'object');
+      let temp_var = Object.prototype.toString.call(obj) == '[object,object]';
+      console.log(temp_var);
+    </script>
+  </body>
+</html>

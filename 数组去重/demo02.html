@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>means01</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var arr=[12,22,52,22,32,68,86,52];
+      console.log(arr.length);
+      function uniq(arr){
+        var n = [];
+        for(var i=0;i<arr.length;i++){
+          if(n.indexOf(arr[i])==-1){
+            n.push(arr[i]);
+          }
+        }
+        console.log(n);
+      }
+      uniq(arr)
+    </script>
+  </body>
+</html>

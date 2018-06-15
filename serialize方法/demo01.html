@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>初始serialize</title>
+  </head>
+  <body>
+    <form class="" action="index.html" method="post">
+      姓名：<input type="text" name="namer" value="">
+      电话 <input type="number" name="phone" value="">
+      <input type="submit" name="" value="提交">
+    </form>
+    <script type="text/javascript" src="../js/jQuery-3.2.1.min.js">
+
+    </script>
+    <script type="text/javascript">
+      // 描述: 将用作提交的表单元素的值编译成字符串。
+      // 注意：这个方法不接受任何参数
+      /*
+      .serialize() 方法使用标准的 URL-encoded 符号上建立一个文本字符串. 它可以对一个代表一组表单元素的 jQuery 对象进行操作，比如<input>, <textarea>, 和 <select>: $( "input, textarea, select" ).serialize();：
+
+      <form> 序列化很容易：
+      */
+      $('form').on('submit',function(e){
+        e.preventDefault(); //preventDefault() 方法阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
+        console.log($(this).serialize());
+      })
+      /*
+      注意: 只有 "successful controls"可以被序列化成字符串。
+      其中，提交按钮的值不会被序列化。另外，如果想要一个表单元素的值被序列化成字符串，这个元素必须含有 name 属性。
+      此外，复选框（checkbox）和单选按钮（radio）(input 类型为 "radio" 或 "checkbox")的值只有在被选中时才会被序列化。
+      另外，文件选择元素的数据也不会被序列化。
+      */
+    </script>
+  </body>
+</html>

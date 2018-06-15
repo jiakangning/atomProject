@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>原生对象的原型</title>
+</head>
+<body>
+  <script type="text/javascript">
+// 原生对象的原型
+// 原型的重要性不仅体现在创建自定义类型方面，就连所有原生的引用类型，都是采用这种模式创建的。
+// 所有原生引用类型（Object、Array、String，等等）都在其构造函数的原型上定义了方法。
+// 例如，在 Array.prototype 中可以找到 sort() 方法，而在 String.prototype 中可以找到 substring() 方法，如下所示。
+
+console.log(typeof Array.prototype.sort);       // "function"
+console.log(typeof String.prototype.substring); // "function"
+// 通过原生对象的原型，不仅可以取得所有默认方法的引用，而且也可以定义新方法。
+// 可以像修改自定义对象的原型一样修改原生对象的原型，因此可以随时添加方法。
+// 下面的代码就给基本包装类型 String 添加了一个名为 startsWith() 的方法。
+  </script>
+</body>
+</html>

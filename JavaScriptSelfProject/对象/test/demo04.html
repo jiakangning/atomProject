@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>官咖三</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+  * 如果 o 中的属性在 p 中存在同名属性，则从 o 中删除这个属性
+  * 返回 o
+ */
+function subtract(o,p) {
+  for (var prop in p) {
+    delete o[prop];
+  }
+  return o;
+}
+
+var x = {
+  name:'xxx',
+  age:25,
+  art:'physic',
+  score:66
+}
+var y = {
+  name:'sss',
+  age:25,
+  mathScore:75,
+  sportScore:65
+}
+console.log(subtract(x,y));
+</script>
+</body>
+</html>

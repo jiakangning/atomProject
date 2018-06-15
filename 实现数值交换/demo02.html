@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>法二</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 需要俩个整数
+      var a=parseInt(12.66),
+          b=parseInt(120.05);
+      function exchange(){
+        // a ^=b;
+        // b ^=a;
+        // a ^=b;
+        a=a^b;
+        b=a^b;
+        a=a^b;
+        console.log(a,b);
+      }
+      exchange();
+    </script>
+  </body>
+</html>

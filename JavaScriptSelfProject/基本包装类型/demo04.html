@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>基本包装类型</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+引用类型与基本包装类型的主要区别就是对象的生存期。使用 new 操作符创建的引用类型的实例，
+在执行流离开当前作用域之前都一直保存在内存中。而自动创建的基本包装类型的对象，则只存在于一行代码的执行瞬间,
+然后立即被销毁。这意味着我们不能在运行时为基本类型值添加属性和方法。来看下面的例子
+
+
+
+    // 把字符串传给 Object 构造函数，就会创建 String 的实例；而传入数值参数会得到 Number 的实例，
+    //传入布尔值参数就会得到 Boolean 的实例。
+
+    要注意的是，使用 new 调用基本包装类型的构造函数，与直接调用同名的转型函数是不一样的。
+*/
+var value = '132456';
+var num1 = Number(value);
+console.log(typeof num1);//Number
+var num2 = new Number(value);
+console.log(typeof num2);//Object
+  </script>
+</body>
+</html>

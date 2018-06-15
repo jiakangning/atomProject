@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    let dbHost;
+if
+(process.env.DB_HOST) {
+dbHost = process.env.DB_HOST;
+}
+else
+{
+dbHost =
+'localhost'
+;
+}
+console.log(dbHost);
+let dbHost = process.env.DB_HOST || 'localhost';
+    </script>
+  </body>
+</html>

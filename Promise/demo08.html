@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>reject</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function getNumber() {
+      var p = new Promise(function (resolve,reject){
+        // 做一些异步操作
+        setTimeout(function (){
+          var num = Math.ceil(Math.random*10);
+          if (num<=1) {
+            resolve(num);
+          }
+          else {
+            reject('数字太大啦！')
+
+          }
+        },2000);
+      });
+      return p;
+    }
+    getNumber()
+    .then(function (data){
+      console.log('resolved');
+      console.log(data);
+    })
+    .catch(function (reason){
+      console.log('rejected!');
+      console.log(reason);
+    })
+    </script>
+  </body>
+</html>

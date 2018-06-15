@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>各类方法详解</title>
+  </head>
+  <body>
+    <!-- 在浏览器环境中，DOM、BOM、window对象、setTimeout/setInterval，alert，console等方法
+    均不是JavaScript自身具备的能力，
+    而是浏览器native实现，
+    然后通过JavaScript引擎注入到JS运行的全局上下文中，供JS使用。
+    在调试器console中打出来，带有[native code]的即是：
+  -->
+    <script type="text/javascript">
+      console.log(alert); //ƒ alert() { [native code] }
+      console.log(setTimeout);//ƒ setTimeout() { [native code] }
+      console.log(setInterval); //ƒ setInterval() { [native code] }
+      console.log(document.write);//ƒ write() { [native code] }
+      console.log(window.Blob);//ƒ Blob() { [native code] }
+    </script>
+  </body>
+</html>

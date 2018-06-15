@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>官咖一</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+   * 将 p 中的可枚举属性复制至 o 中，并返回 o
+   * 如果 o 和 p 中有同名的属性，o 中的属性将不受影响
+   */
+   function merge(o,p){
+     for (var prop in p) {
+       if (o.hasOwnProperty(prop)) continue
+       else {
+         o[prop] = p[prop];
+       }
+     }
+     return o;
+   }
+var x = {
+  name:'xxx'
+}
+var y = {
+  name:'sss',
+  age:25,
+  mathScore:75,
+  sportScore:65
+}
+console.log(merge(x,y));
+</script>
+</body>
+</html>

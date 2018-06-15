@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>b继承a</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function A(name) {
+        this.name = name;
+        this.sayHello = function (){
+          alert(this.name+'sayHello');
+        }
+      }
+      function B(name,id){
+        this.temp = new A(name);
+        // this.temp(name);
+        this.temp.sayHello();
+        // delete this.temp;
+        this.id = id;
+        this.checkId = function(ID){
+          alert(this.id == ID);
+        }
+      }
+      var test = new B('wangxing',001);
+      test.checkId(001);
+    </script>
+  </body>
+</html>

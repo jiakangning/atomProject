@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>基本包装类型 --String 类型--字符串操作方法 -- localeCompare()</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // 如果字符串在字母表中应该排在字符串参数之前，则返回一个负数（大多数情况下是-1，具体的值要视实现而定）；
+//如果字符串等于字符串参数，则返回0；
+// 如果字符串在字母表中应该排在字符串参数之后，则返回一个正数（大多数情况下是1，具体的值同样要视实现而定）。
+var stringValue = "yellow";
+console.log(stringValue.localeCompare("brick"));    // 1
+console.log(stringValue.localeCompare("yellow"));   // 0
+console.log(stringValue.localeCompare("zoo"));      // -1
+  </script>
+</body>
+</html>

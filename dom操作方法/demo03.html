@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HTML DOM 定义了访问和操作HTML文档的标准方法</title>
+  </head>
+  <body>
+    <form class="" action="index.html" method="post">
+        <input type="text" name="import" value="" placeholder="你好">
+    </form>
+    <script type="text/javascript">
+      /*
+      all
+      forms   获取所有的form 表单对象
+      images
+      links
+      body
+      */
+      // 获取dom 树, 获取document 对象.
+      var dom = window.document;
+      function gain_dom_all(){
+        var dom_forms = dom.forms;
+        for (var i = 0; i < dom_forms.length; i++) {
+          console.log(dom_forms[i].nodeName);
+        }
+      }
+      gain_dom_all();
+    </script>
+  </body>
+</html>

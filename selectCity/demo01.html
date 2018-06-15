@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js城市选择控件cityselect.js - 站长素材</title>
+
+<!-- 引入css和js即可 -->
+<link rel="stylesheet" href="cityselect.css">
+<script type="text/javascript" src="cityselect.js"></script>
+
+<style type="text/css">
+.demo{width:220px;margin:20px auto;}
+</style>
+
+
+</head>
+<body>
+<div class="demo">
+
+	<!-- 在输入框加入id -->
+	<input type="text" class="cityinput" id="citySelect" placeholder="请输入目的地">
+
+	<!-- 以下仅测试IE6下的状况,不用管它 -->
+	<br/><br/>
+	<select name="IE6">
+		<option>测试IE6</option>
+		<option>2</option>
+		<option>3</option>
+	</select>
+</div>
+
+<!-- 实例化 -->
+<script type="text/javascript">
+var test=new Vcity.CitySelector({input:'citySelect'});
+</script>
+
+<!-- 使用三步: 1.引入css和js文件;2.在需要的输入框加id;3.js创建一个实例,需要传入输入框id; -->
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗.</p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
+</body>
+</html>

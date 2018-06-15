@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组元素的读和写</title>
+</head>
+<body>
+  <script type="text/javascript">
+    //使用 [] 操作符来访问数组中的一个元素。数组的引用位于方括号的左边。
+    // 方括号中是一个返回非负整数值的任意表达式。使用该语法既可以读又可以写数组的一个元素。例如：
+    var a = ["world"];     // 从一个元素的数组开始
+var value = a[0];      // 读第0个元素
+a[1] = 3.14;           // 写第1个元素
+var i = 2;
+a[i] = 3;              // 写第2个元素
+a[i + 1] = "hello";    // 写第3个元素
+a[a[i]] = a[0];        // 读第0个和第2个元素，写第3个元素
+  </script>
+</body>
+</html>

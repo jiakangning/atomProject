@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>正则表达式</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // 比较两个字符串，比较是规则是按照字母表顺序比较的
+
+  var name = 'Muaneng Tuanpeng'.trim();
+  var patter1 = /(.)u/gi;
+  if (patter1.test(name)) {
+    var orignal = RegExp.input;//原始字符串
+    var leftContext = RegExp.leftContext;//捕捉到的位置的左边字符串
+    var rightContext = RegExp.rightContext;//捕捉到的位置的右边字符串
+    var lastMatch = RegExp.lastMatch;//返回最近一次与整个正则表达式匹配的字符串 mu
+    RegExp.lastParen;           //返回最近一次捕捉的字符
+   patter1.global;             //返回正则是否包含全局标志g
+  }
+  console.log(orignal);
+  console.log(leftContext);
+  console.log(rightContext);
+  console.log(lastMatch);
+  </script>
+</body>
+</html>

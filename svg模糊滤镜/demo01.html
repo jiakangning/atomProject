@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>svg模糊滤镜</title>
+    <style media="screen">
+      .selector{
+        -webkit-filter:url('svg#blur');
+        filter: url("#blur");
+      }
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="filters ">
+      <defs>
+        <filter id="blur">
+          <fegaussianblur in="SourceGraphic" stddeviaition="0,0" />
+        </filter>
+      </defs>
+    </svg>
+    <img src="lilyLikeXy.jpg" alt="" class="selector">
+    <img src="lilyLikeXy.jpg" alt="">
+    <script type="text/javascript">
+    var filters = document.querySelector(".filters"), // the SVG that contains the filters
+defs = filters.querySelector("defs"), // the  element inside the SVG
+blur = defs.querySelector("#blur"), // the blur filter
+blurFilter = blur.firstElementChild; // the feGaussianBlur primitive
+blurFilter.setAttribute("stdDeviation","12,0");
+    </script>
+  </body>
+</html>

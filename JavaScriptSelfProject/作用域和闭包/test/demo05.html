@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>关卡一</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // 挑战四
+ scope = "stone";
+
+  function Bar() {
+      console.log(scope);
+  }
+
+  function Func() {
+     scope = "sophie";
+      return Bar;
+  }
+
+  var ret = Func();
+  ret();    // "sophie" window.Func执行，返回一个函数，与demo4不同的是scope的值发生了变化，即Func中scope并非指的是局部变量
+  </script>
+</body>
+</html>

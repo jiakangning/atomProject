@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HTML DOM 定义了访问和操作HTML文档的标准方法</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+      all    获取页面中所有的标签节点 ,注释和文档类型约束.
+      forms  
+      images
+      links
+      body
+      */
+      // 获取dom 树, 获取document 对象.
+      var dom = window.document;
+      function gain_dom_all(){
+        var dom_all = dom.all;
+        for (var i = 0; i < dom_all.length; i++) {
+          console.log(dom_all[i].nodeName);
+        }
+      }
+      gain_dom_all();
+    </script>
+  </body>
+</html>

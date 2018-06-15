@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <img src="" alt="">
+    <script type="text/javascript">
+      var oimg = document.querySelector('img');
+      var myRequest = new Request('https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=4b7acf88932397ddd6799f0261b9d58a/5bafa40f4bfbfbed8526c0107af0f736afc31f65.jpg');
+
+      fetch(myRequest)
+      .then(function (response) {
+        return response.blob();
+      })
+      .then(function (myblob){
+        var objectURL = URL.createObjectURL(myblob);
+        oimg.src = objectURL;
+      })
+      console.log(Math.pow(2,0));
+    </script>
+  </body>
+</html>

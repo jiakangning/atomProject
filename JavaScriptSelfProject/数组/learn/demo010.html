@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组元素的读和写</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var a = ['world'];
+    var value = a[0];
+    console.log(value);
+    a[1] = 3.14;
+    console.log(a);
+    a['-1'] = 123;
+    console.log(a);//["world", 3.14, -1: 123]
+    a[-1] = 234;
+    console.log(a);//["world", 3.14, -1: 234]
+    a[-1.000] = 345;
+    console.log(a);// ["world", 3.14, -1: 345]
+    a[1001] = 12345;
+    console.log(a);//(1002) ["world", 3.14, empty × 999, 12345, -1: 345]
+  </script>
+</body>
+</html>

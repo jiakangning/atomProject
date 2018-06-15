@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>合并排序法</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    var mergesort = function(arr) {
+        var n = arr.length;
+        if (n > 1) {
+            //将数组平均分为两个子数组
+            var _arr1 = arr.slice(0, Math.floor(n/2));
+            var _arr2 = arr.slice(Math.ceil(n/2), n);
+
+            //对子数组重新调用本方法
+            mergesort(_arr1);
+            mergesort(_arr2);
+
+            //实现两个有序数组的合并
+            merge(_arr1, _arr2, arr);
+
+            //返回排过序的结果
+            return arr;
+        }else{
+            return arr;
+        }
+    }
+
+    /**
+     * 实现对两个有序数组的合并
+     * @param  {Array} arr1 有序数组
+     * @param  {Array} arr2 有序数组
+     * @param  {Array} arr3
+     * @return {[Array]}     [arr1与arr2两者合并后的顺序数组]
+     */
+    function merge(arr1, arr2, arr3) {
+        var i = 0, j = 0, k = 0, p = arr1.length, q = arr2.length;
+        //当两个数组的元素依次比对，小的元素赋值给arr3
+        while(i < p && j < q){
+            if(arr1[i] < arr2[j]){
+                arr3[k] = arr1[i];
+                i++;
+            }else{
+                arr3[k] = arr2[j];
+                j++;
+            }
+            k++;
+        }
+
+        //肯定是一个数组比对完毕，另一个数组未完全用完，因此该数组剩下的数字添加到arr3中
+        if (i == p ) {    //如果arr2未处理完
+            for(;j < q; j++){
+                arr3[k] = arr2[j];
+                k++;
+            }
+        } else {        //如果arr1未处理完
+            for(;i < p; i++){
+                arr3[k] = arr1[i];
+                k++;
+            }
+        }
+    };
+    console.log(mergesort([8,3,2,9,7,1,5,4]));    
+</script>
+</html>

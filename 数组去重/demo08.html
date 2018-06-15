@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>数组去重</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function uniq(arr){
+        if (!Array.isArray(arr)) {
+          console.log('type is error!');
+          return ;
+        }
+        let res = [];
+        let obj = {};
+        for (var i = 0; i < arr.length; i++) {
+          if (!obj[arr[i]]) {
+            res.push(arr[i]);
+            obj[arr[i]] = 1;
+          }
+          else {
+            obj[arr[i]] ++;
+          }
+        }
+        return res;
+      }
+      var arr = [12,1,1,5,41,45,1,45,1,1,4,65,4,6,16,4,65];
+      console.log(uniq(arr));
+    </script>
+  </body>
+</html>

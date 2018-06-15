@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>判断输入框的值是否为空</title>
+  </head>
+  <body>
+    <input type="text" name="" value="" id="text">
+    <input type="button" name="" value="测试" id="btn">
+    <script type="text/javascript">
+      var otxt = document.getElementById('text');
+      var btn = document.getElementById('btn');
+      btn.onclick = function(){
+        isNull(otxt.value)
+
+      }
+      function isNull(val){
+        //1.去除空格
+         var str = val.replace(/(^\s*)|(\s*$)/g,'');
+        //2.判断
+        if(str == '' || str == undefined || str == null){
+          //return ture
+          console.log('空');
+        }
+        else {
+          //return false
+          console.log('非空');
+        }
+      }
+    </script>
+  </body>
+</html>

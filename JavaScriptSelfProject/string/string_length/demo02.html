@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Js中的字符串长度--advance</title>
+</head>
+<body>
+  <script type="text/javascript">
+    String.prototype.lengthSingle = function () {
+      var b= 0;
+      var l = this.length;
+      if (l) {
+        for (var i = 0; i < l; i++) {
+          var c = this.charAt(i);
+          if (escape(c).length>4) {          //escape() 函数可对字符串进行编码，这样就可以在所有的计算机上读取该字符串。
+            b += 2;                         //unescape() 可对字符串进行解码
+          }
+          else if (c!='\r') {
+            b ++;
+          }
+        }
+        return b;
+      }
+      else {
+        return 0;
+      }
+    }
+    var str = new String('我是双字节');
+    console.log(str.lengthSingle());
+    var str2 = 'i am singleString!';
+    console.log(str2.lengthSingle());
+    var str3 = '我是双字节，and i am also the singleString!';
+    console.log(str3.lengthSingle());
+  </script>
+</body>
+</html>

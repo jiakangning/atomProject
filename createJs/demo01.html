@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      html,body{
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="cas"></canvas>
+    <script>
+    function init(){
+        //定义canvas的宽高
+        var cas = document.getElementById('cas')
+        cas.width = document.body.clientWidth;
+        cas.height = document.body.clientHeight;
+        var stage = new createjs.Stage('cas');
+        //canvas的宽高
+         C_W = stage.canvas.width;
+           C_H = stage.canvas.height;
+        //创建一个黑色长方体
+        rect = new createjs.Shape();
+        rect.graphics.beginFill('black').drawRect(0,C_H-100,50,100);
+
+        stage.addChild(rect)
+        stage.update();
+
+        //开启触摸事件
+        createjs.Touch.enable(stage);
+        //对舞台增加一个监听事件
+        stage.addEventListener('mousedown', stickGain);
+        function stickGain(){
+            alert(2)
+        }
+    }
+</script>
+  </body>
+</html>

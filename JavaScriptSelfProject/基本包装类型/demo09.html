@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>基本包装类型 --Number 类型</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+Number 是与数字值对应的引用类型。要创建 Number 对象，
+可以在调用 Number 构造函数时向其中传递相应的数值。下面是一个例子。
+
+与 Boolean 类型一样，Number 类型也重写了 valueOf()、toLocaleString() 和 toString() 方法。
+重写后的 valueOf() 方法返回对象表示的基本类型的数值，另外两个方法则返回字符串形式的数值。
+可以为 toString() 方法传递一个表示基数的参数，告诉它返回几进制数值的字符串形式，如下面的例子所示。
+*/
+var num = 10;
+console.log(num.toString());     // "10"
+console.log(num.toString(2));    // "1010"
+console.log(num.toString(8));    // "12"
+console.log(num.toString(10));   // "10"
+console.log(num.toString(16));   // "a"
+console.log(num.toString(6)); // 14
+
+/*
+在这个例子中，我们使用 false 值创建了一个 Boolean 对象。然后，
+将这个对象与基本类型值 true 构成了逻辑与表达式。
+在布尔运算中，false && true 等于 false。可是，示例中的这行代码是对 falseObject 而不是对它的值 false 进行求值。布尔表达式中的所有对象都会被转换为 true，
+因此 falseObject 对象在布尔表达式中代表的是 true。结果，true && true 当然就等于 true 了。
+
+*/
+  </script>
+</body>
+</html>

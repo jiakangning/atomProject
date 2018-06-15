@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>callBack</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function obj() {
+        // 利用instance判断arguments
+        console.log(arguments.callee);
+      }
+      obj();
+    </script>
+  </body>
+</html>

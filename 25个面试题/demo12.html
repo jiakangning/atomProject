@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>11、写一个少于 80 字符的函数，判断一个字符串是不是回文字符串</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function isPalindrome(str) {
+str = str.replace(/\W/g, '').toLowerCase();
+return (str == str.split('').reverse().join(''));
+}
+let str1 = 'hgjgbrgregbei';
+let str2 = 'abcdedcba'
+console.log(isPalindrome(str1));
+console.log(isPalindrome(str2));
+//回文字符串 ：字符串轴对称
+    </script>
+  </body>
+</html>

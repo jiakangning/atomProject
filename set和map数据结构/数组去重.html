@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>数组去重</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //法一：
+      // var array=[10,22,41,22,30,41,16];
+      // var newArray = [...new Set(array)];
+      // console.log(newArray);
+      //法二：
+      var array=[10,22,41,22,30,41,16];
+      function dedupe(array){
+        return Array.from(new Set(array))
+      };
+      console.log(dedupe(array));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>使用 NodeList</title>
+  <style media="screen">
+    div{
+      width: 100px;
+      height: 100px;
+      background: red url() 0 0 no-repeat;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+  <script lang="en">
+  var i,len,div,divs = document.getElementsByTagName("div");
+  console.log(divs.length);
+for (i=0, len=divs.length; i < len; i++){
+    div = document.createElement("div");
+    document.body.appendChild(div);
+}
+/*
+第一行代码会取得文档中所有 <div> 元素的 HTMLCollection。由于这个集合是“动态的”，
+因此只要有新 <div> 元素被添加到页面中，这个元素也会被添加到该集合中。
+浏览器不会将创建的所有集合都保存在一个列表中，而是在下一次访问集合时再更新集合。
+结果，在遇到上例中所示的循环代码时，就会导致一个有趣的问题。
+每次循环都要对条件 i < divs.length 求值，意味着会运行取得所有 <div> 元素的查询。
+考虑到循环体每次都会创建一个新 <div> 元素并将其添加到文档中，
+因此 divs.length 的值在每次循环后都会递增。既然i和 divs.length 每次都会同时递增，结果它们的值永远也不会相等。
+
+*/
+  </script>
+</body>
+</html>

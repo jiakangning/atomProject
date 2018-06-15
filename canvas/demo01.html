@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canvas教程</title>
+  <style media="screen">
+    body,html{
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+    canvas{
+      display: block;
+      background: #000  0 0 no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" >
+    <p>你的瀏覽器不支持canvas！</p>
+  </canvas>
+  <script type="text/javascript">
+    'use strict';
+    var canvas = document.getElementById('canvas');
+    var w= window.innerWidth;
+    var h = window.innerHeight;
+    canvas.style.width = w+'px';
+    canvas.style.height = h+'px';
+    if (canvas.getContext) {
+      console.log('你的瀏覽器支持canvas！');
+    }
+    else {
+      console.log('你的瀏覽器不支持canvas！');
+    }
+    var ctx = canvas.getContext('2d');
+    ctx.clearRect(0,0,200,200);
+    ctx.fillStyle = '#ddd';
+    ctx.fillRect(10,10,130,130);
+    // 利用path繪製複雜的路徑
+  var path = new Path2D();
+  path.arc(75,75,50,0,Math.PI*2,true);
+  ctx.stroke();
+  </script>
+</body>
+</html>

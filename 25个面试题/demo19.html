@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // console.log((function fn(n){return (n-1?n*fn(n-1):n)})(5));
+      console.log((let fn = (n)=>n-1?n*fn(n-1):n)(5));
+    </script>
+  </body>
+</html>

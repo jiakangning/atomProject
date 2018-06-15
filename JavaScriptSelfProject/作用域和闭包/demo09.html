@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>作用域--全局作用域和局部作用域的关系</title>
+</head>
+<body>
+  <script type="text/javascript">
+  //JavaScript 的函数作用域是指在函数内声明的所有变量在函数体内始终是可见的。
+  // 有意思的是，这意味着变量在声明之前甚至已经可用。JavaScript 的这个特性被非正式地称为声明提前（hoisting），
+  // 即 JavaScript 函数里声明的所有变量（但不涉及赋值）都被「提前」至函数体的顶部，看一下如下代码：
+  var scop = 'global';
+  function f (){
+    console.log(scop); //global
+    scop = 'local';
+    console.log(scop);//local
+  }
+  f();
+  </script>
+</body>
+</html>

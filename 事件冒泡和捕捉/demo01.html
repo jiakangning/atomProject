@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>事件冒泡</title>
+    <style media="screen">
+      div{
+        border: 1px solid red;
+      }
+      div#container{
+        width: 1000px;
+        height: 400px;
+      }
+      #container div{
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="" id="container">
+      <div class="" id="chid_one">
+
+      </div>
+      <div class="" id="child_two">
+
+      </div>
+    </div>
+    <script type="text/javascript">
+      var container = document.getElementById('container');
+      var chid_one = document.getElementById('chid_one');
+      container.addEventListener('click',function (e){
+        alert('parent事件被触发'+this.id);
+      })
+      chid_one.addEventListener('click',function (e){
+        var e = e || window.event;
+         // e.stopPropagation();
+        alert('child_one事件被触发'+this.id);
+      })
+    </script>
+  </body>
+</html>

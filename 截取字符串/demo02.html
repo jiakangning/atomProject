@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>截取字符串SubStr()--兼容性写法</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // only run when the substr function is broken
+if ('ab'.substr(-1) != 'b')
+{
+/**
+ *  Get the substring of a string
+ *  @param  {integer}  start   where to start the substring
+ *  @param  {integer}  length  how many characters to return
+ *  @return {string}
+ */
+String.prototype.substr = function(substr) {
+  return function(start, length) {
+    // did we get a negative start, calculate how much it is
+    // from the beginning of the string
+    if (start < 0) start = this.length + start;
+
+    // call the original function
+    return substr.call(this, start, length);
+  }
+}(String.prototype.substr);
+}
+var str = 'afhsfjks';
+console.log(str.substr(1,2));
+  </script>
+</body>
+</html>

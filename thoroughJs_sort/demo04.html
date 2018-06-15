@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>数组对象的排序</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var arr=[
+        {'name':'liyang','age':20},
+        {'name':'liuxiang','age':10},
+        {'name':'lingxi','age':35},
+        {'name':'oyangnana','age':14},
+        {'name':'qinyumo','age':140}
+      ];
+      function compare(property){
+        return function(a,b){
+          var value1=a[property];
+          var value2=b[property];
+          return value1 - value2;
+        }
+      }
+      console.log(arr.sort(compare('age')));
+    </script>
+  </body>
+</html>

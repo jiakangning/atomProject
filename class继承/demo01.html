@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>继承</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      class Teacher {
+        constructor(name,sex) {
+          this.name = name;
+          this.sex = sex;
+        }
+        say (){
+          return this.name +'say his sex is '+this.sex;
+        }
+      }
+      var person = new Teacher('张三','men');
+      console.log(person.say());
+      class  Student extends Teacher{
+        constructor(name,sex,score) {
+          super(name,sex);
+          this.score = score;
+        }
+        say (){
+          return super.say()+' his score is '+this.score;
+        }
+      }
+      var learn_people = new Student('小花','women',88);
+      console.log(learn_people.say());
+    </script>
+  </body>
+</html>

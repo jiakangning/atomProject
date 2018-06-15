@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>judge symbol</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function sameSign(a,b){
+        return (a^b)>=0; //按位不带进位的相加，所以只需要对最高位的相加，而正数最高位为0，负数最高位为1，
+                        //所以对符号相同的俩个数自然相加就为正，符号相异的结果紫檀为负数，则返回为false
+      }
+      console.log(sameSign(-12, 5));
+    </script>
+  </body>
+</html>

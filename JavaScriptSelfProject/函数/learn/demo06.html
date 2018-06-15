@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>作为值的函数</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+因为 JavaScript 中的函数名本身就是变量，所以函数也可以作为值来使用。
+也就是说，不仅可以像传递参数一样把一个函数传递给另一个函数，
+而且可以将一个函数作为另一个函数的结果返回。来看一看下面的函数。
+  */
+  function callSomeFunction(someFunction,someArgument) {
+    return someFunction(someArgument);
+  }
+
+  function add10(num) {
+    return num + 10;
+  }
+  var result = callSomeFunction(add10,10);
+  console.log(result);//20
+  function getGreeting(name) {
+    return 'Hello,' + name;
+  }
+  var helloZhangsan = callSomeFunction(getGreeting,'zhangsan');
+  console.log(helloZhangsan);//hello Zhangsan
+/*
+这里的 callSomeFunction() 函数是通用的，即无论第一个参数中传递进来的是什么函数，它都会返回执行第一个参数后的结果。
+要访问函数的指针而不执行函数的话，必须去掉函数名后面的那对圆括号。
+因此上面例子中传递给 callSomeFunction() 的是 add10 和 getGreeting，而不是执行它们之后的结果
+*/
+  </script>
+</body>
+</html>

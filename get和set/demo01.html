@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Field(val){
+        this.value=val;
+      }
+      Field.prototype = {
+        get value(){
+          return this._value;
+        },
+        set value(){
+           this._value = val+'的网址是：jinxunedu.com';
+        }
+      }
+      var filed = new Field('金迅教育');
+      filed.value='jxjy';
+      console.log(filed.value);
+    </script>
+  </body>
+</html>

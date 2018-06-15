@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>搜狐 -- 实现一个遍历数组或对象里所有成员的迭代器</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+      1.首先判断传进来的是数组还是对象,用到instanceof,typeof和instanceof都可以用来判断js变量类型，用法区别
+      typeof(obj) //typeof会返回一个基本数据类型
+      obj instanceof Array //instanceof一般是用来验证一个对象是否属于某类
+      注：typeof遇到null，数组，对象都会返回object类型
+      */
+      var each = function (obj,fn){
+        if (obj instanceof Array) {
+          // console.log('此数据类型为数组对象');
+        }
+        else if (obj instanceof Object) {
+          // console.log('此为对象');
+        }
+      }
+      try {
+        var data1 = [4,5,6,11,7,8,9,10];
+        var data2 = {
+          'a':4,
+          'b':5,
+          'c':6
+        };
+         // console.group(data1);
+        // console.log(data1);
+        each(data1,function(o){
+          if (6 == this) {
+            return true;
+          }
+          else if (8 == this) {
+            return false;
+          }
+            console.log(o + ':\''+this+'\'');
+        })
+        console.groupEnd();
+        console.group(data2)
+      } catch (e) {
+
+      } finally {
+
+      }
+    </script>
+  </body>
+</html>

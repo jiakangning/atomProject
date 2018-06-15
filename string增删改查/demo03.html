@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>字符串的//截取</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var name = '  Muaneng Tuanpeng  ';
+    name = name.trim();//去掉字符串前后空格
+    var firstIndex = name.indexOf('g',0),
+        lastIndex = name.indexOf('T',6);
+        console.log(firstIndex);
+        console.log(lastIndex);
+    var name1 = name.substr(1,5);
+    var name2 = name.substring(firstIndex,lastIndex);
+    var name3 = name.slice(1,5);
+    console.log(name1);//uanen
+    console.log(name2);//g
+    console.log(name3);//uanen
+    //传入负值时，slice将负值加上字符串长度，substr将第一个负值加上字符串长度，第二个负值转为0，substring将负值都转为0
+  </script>
+</body>
+</html>

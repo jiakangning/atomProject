@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>原生对象的原型</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+  原型模式也不是没有缺点。首先，它省略了为构造函数传递初始化参数这一环节，
+  结果所有实例在默认情况下都将取得相同的属性值。虽然这会在某种程度上带来一些不方便，
+  但还不是原型的最大问题。原型模式的最大问题是由其共享的本性所导致的。
+
+  原型中所有属性是被很多实例共享的，这种共享对于函数非常合适。
+  对于那些包含基本值的属性倒也说得过去，毕竟（如前面的例子所示），通过在实例上添加一个同名属性，
+  可以隐藏原型中的对应属性。然而，对于包含引用类型值的属性来说，问题就比较突出了。来看下面的例子。
+  */
+  function Person(){}
+
+  Person.prototype = {
+      constructor: Person,
+      name : "Stone",
+      age : 28,
+      job : "Software Engineer",
+      friends : ["ZhangSan", "LiSi"],
+      sayName : function () {
+          console.log(this.name);
+      }
+  };
+
+  var person1 = new Person();
+  var person2 = new Person();
+
+  person1.friends.push("WangWu");
+
+  console.log(person1.friends);    // "ZhangSan,LiSi,WangWu"
+  console.log(person2.friends);    // "ZhangSan,LiSi,WangWu"
+  console.log(person1.friends === person2.friends);  // true
+
+  /*
+在此，Person.prototype 对象有一个名为 friends 的属性，该属性包含一个字符串数组。
+然后，创建了 Person 的两个实例。接着，修改了 person1.friends 引用的数组，向数组中添加了一个字符串。
+由于 friends 数组存在于 Person.prototype 而非 person1 中，
+所以刚刚提到的修改也会通过 person2.friends（与 person1.friends 指向同一个数组）反映出来。
+假如我们的初衷就是像这样在所有实例中共享一个数组，
+那么对这个结果我没有话可说。可是，实例一般都是要有属于自己的全部属性的。
+  */
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>作用域--全局作用域和局部作用域的关系</title>
+</head>
+<body>
+  <script type="text/javascript">
+  scope = "global";           // 声明一个全局变量，甚至不用 var 来声明
+function checkscope2() {
+    scope = "local";        // 糟糕！我们刚修改了全局变量
+    myscope = "local";      // 这里显式地声明了一个新的全局变量
+    return [scope, myscope];// 返回两个值
+}
+console.log(checkscope2()); // ["local", "local"]，产生了副作用
+console.log(scope);         // "local"，全局变量修改了
+console.log(myscope);       // "local"，全局命名空间搞乱了
+  </script>
+</body>
+</html>

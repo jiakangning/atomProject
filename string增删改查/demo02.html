@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>字符串的查询</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var name = '  Muaneng Tuanpeng  ';
+    name = name.trim();//去掉字符串前后空格
+    var beginIndex = name.indexOf('t',name.length-10);//第二个参数表示从何处开始查询
+    var endIndex = name.indexOf('g',0);
+    console.log(beginIndex);
+    console.log(endIndex);
+  </script>
+</body>
+</html>

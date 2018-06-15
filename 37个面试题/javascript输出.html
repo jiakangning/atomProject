@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>javascript输出</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      console.log(0.1+0.2);
+      console.log(0.1 + 0.2 === 0.3);
+      console.log((Number.EPSILON).toFixed(20));
+      function areTheNumberAlomostEqual(num1,num2){
+        return Math.abs(num1 - num2) < Number.EPSILON;
+      }
+      console.log(areTheNumberAlomostEqual(0.1+0.2,0.3));
+    </script>
+  </body>
+</html>

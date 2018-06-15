@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>如何高效产生m个n范围内的不重复随机数</title>
+</head>
+<body>
+  <script type="text/javascript">
+    console.time();
+  var getRandomNumber = function(n, m){
+  // 待实现方法体
+  if (typeof n !== 'number' || typeof m !== 'number') {
+    throw Error('m,n 均须为数字！');
+  }
+  if (m >= n) {
+    throw Error('m 必须小于 n !');
+  }
+  var result = [];
+  function selectRandom(lowerValue,upperValue) {
+    var choice = upperValue - lowerValue;
+    return Math.floor(Math.random()*choice + lowerValue);
+  }
+  function pushRandom() {
+    var randomNumber = selectRandom(0,n-1);
+    if (result.indexOf(randomNumber) < 0) {
+      result.push(randomNumber);
+    }
+  }
+  while (result.length < m) {
+    pushRandom();
+  }
+  return result;
+
+}
+try {
+  getRandomNumber(100,50);
+} catch (e) {
+  alert('m 必须小于n!')
+}
+console.log(getRandomNumber(100, 10));  // 8,4,19
+ console.timeEnd();
+  </script>
+</body>
+</html>

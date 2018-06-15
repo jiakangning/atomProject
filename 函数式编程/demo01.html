@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>匿名函数的递归</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function fact(n) {
+      return n==0 ? 1 : n*fact(n-1);
+    };
+    // 5*4*3*2*1 = 120
+    var result = fact(5); //120
+    console.log(result);
+  </script>
+</body>
+</html>

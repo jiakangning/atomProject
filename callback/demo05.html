@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>caller</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //child 是 parent内的函数，并在parent内执行child
+      function parent() {
+        function child(){
+          // 这里child的父函数就是parent
+          console.log(child.caller);
+        }
+        child();
+      }
+      // parent 没有被别人调用
+      function parent1(){
+        // 这里的parent1没有父函数
+        console.log(parent1.caller);
+      }
+      // parent2调用child2（）
+      function parent2(){
+        child2();
+      }
+      function child2(){
+        console.log(child2.caller);
+      }
+      parent();
+      parent1();
+      parent2();
+    </script>
+  </body>
+</html>

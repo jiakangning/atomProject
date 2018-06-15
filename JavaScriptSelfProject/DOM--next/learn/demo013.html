@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML 类型 -- 创建元素</title>
+</head>
+<body>
+  <!-- 没有内容，也就没有文本节点 -->
+<div ></div>
+
+<!-- 有空格，因而有一个文本节点 -->
+<div id="test"> </div>
+
+<!-- 有内容，因而有一个文本节点 -->
+<div>Hello World!</div>
+
+
+  <script lang="en">
+    var test = document.getElementById('test');
+    console.log(test);
+    test.firstChild.nodeValue = 'this is nodeValue!';
+  </script>
+</body>
+</html>

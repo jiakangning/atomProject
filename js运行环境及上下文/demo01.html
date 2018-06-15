@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>js运行环境</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+       temporay = '我是栈中的内容';
+      // var temporay= '';
+    var temporay = function (){
+        console.log('我是堆中的内容');
+      }
+
+      temporay(); //temporay is not a function
+    </script>
+  </body>
+</html>

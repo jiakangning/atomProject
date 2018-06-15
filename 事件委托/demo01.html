@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>事件委托--01</title>
+  </head>
+  <body>
+    <ul id="todo-app">
+     <li class="item">Walk the dog</li>
+     <li class="item">Pay bills</li>
+     <li class="item">Make dinner</li>
+     <li class="item">Code for one hour</li>
+    </ul>
+    <script type="text/javascript">
+      /*
+      当构建应用程序时，有时你需要将事件监听器绑定到页面上的按钮，
+      文本或图像上，以便在用户与元素交互时执行某些操作。
+      如果我们以一个简单的待办事项列表为例，面试官可能会告诉你，
+      他们希望在用户单击其中一个列表项时需要执行某些操作。
+      */
+      document.addEventListener('DOMContentLoaded',function (){
+        let app =document.getElementById('todo-app');
+        let items = app.getElementsByClassName('item');
+
+        //将事件侦听绑定到每个列表上
+        for (let item of items) {
+          item.addEventListener('click',function (){
+            alert('you clicked on item:'+item.innerHTML);
+          });
+        }
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>多次赋值</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const map = new Map();
+      map.set('a','hello world');
+      map.set('a','hello you');
+      console.log(map.get('a'));//多次赋值，后者会覆盖前者
+    </script>
+  </body>
+</html>

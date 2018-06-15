@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组检查</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // 但由于 for-in 循环能够枚举继承的属性名，
+    // 如添加到 Array.prototype 中的方法。基于这个原因，
+    // 在数组上不应该使用 for-in 循环，除非使用额外的检测方法来过滤不想要的属性。例如：
+  var target1 = [12,4,4,3];
+  var target2 = '[12,4,4,3]';
+  var target3 = {
+    a : 'target1'
+  }
+  console.log(Array.isArray(target1)); //true);
+  console.log(Array.isArray(target2)); //false);
+  console.log(Array.isArray(target3)); //false);
+  </script>
+</body>
+</html>

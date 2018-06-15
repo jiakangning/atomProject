@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>trace</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function tracer(a){
+        console.trace();
+        return a;
+      }
+      function foo(a){
+        return bar(a);
+      }
+      function bar(a){
+        return  tracer(a);
+      }
+      var a = foo('tracer');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>基本包装类型 --Boolean 类型</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+Boolean 类型的实例重写了 valueOf() 方法，返回基本类型值 true 或 false；重写了 toString() 方法，
+返回字符串 "true" 和 "false"。可是，Boolean 对象在 JavaScript 中的用处不大，因为它经常会造成人们的误解。
+其中最常见的问题就是在布尔表达式中使用 Boolean 对象，例如：
+
+*/
+var falseObject = new Boolean(false);
+var result = falseObject && true;
+console.log(result);//true
+
+  </script>
+</body>
+</html>

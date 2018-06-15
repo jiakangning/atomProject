@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var bal = [1,2.3,4151,6,165,1,15,1,465,5];
+      function obj(){
+        console.log('i am is a function!');
+      }
+      // console.log(typeof bal === 'object'); true
+      // console.log(Array.isArray(bal));
+      function test(target){
+        return (!Array.isArray(target)) && (target != null) && (typeof target === 'object')  && (typeof target == 'function')
+      }
+       console.log(test(obj));
+    </script>
+  </body>
+</html>

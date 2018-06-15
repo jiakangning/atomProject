@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>阶乘</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var inp=document.createElement('input');
+      document.body.appendChild(inp);
+      // inp.placeHolder=''//placeholder顾名思义是一个占位符。在你的value为空的时候他才会显示出来，但是他本身并不是value，也不会被表单提交。
+     function mathfactriol(){
+       var result =1;  //此处必须定义
+       var val = parseInt(inp.value);
+       for (var i = 1; i < val; i++) { //阶乘不能从0开始
+         result*=i;
+       }
+       return result;
+     }
+     inp.addEventListener('blur',function(){
+       console.log(mathfactriol());
+     })
+
+    </script>
+  </body>
+</html>

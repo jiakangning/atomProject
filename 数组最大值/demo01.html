@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>maxnumber</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var arr=[12,22,52,22,32,68,86,52];
+      function max_arr(arr){
+        return Math.max.apply(null,arr);
+      }
+      /*
+      xxx.apply是一个调用函数的方法，其参数为：apply(Function, Args)，
+     Function为要调用的方法，Args是参数列表，当Function为null时，默认为上文，
+     即
+     Math.max.apply(null, arr)
+     可认为是
+     apply(Math.max, arr)
+     然后，arr是一个参数列表，对于max方法，其参数是若干个数，即
+     Math.max(a, b, c, d, ...)
+    当使用apply时，把所有参数加入到一个数组中，即
+    arr =  [a, b, c, d, ...]
+    代入到原式，
+    Math.max.apply(null, [a, b, c, d, ...])
+    实际上等同于
+    Math.max(a, b, c, d, ...)
+    在此处，使用apply的优点是在部分JS引擎中提升性能。
+      */
+    console.log(max_arr(arr));
+    /*
+    Math.max()方法，支持传递多个参数，比如：Math.max(1,4,2,3,7,5,6)
+
+    但是它不支持直接传递一个数组作为参数，比如：Math.max(new Array(1,4,2,3,7,5,6))。
+
+    这里，只要我们有方法把数组，一个一个拆分开来，传递到Math.max()方法中，就实现了传递数组的方法。
+
+    所有函数都有apply(作用域链,参数)这个方法，这个函数的“参数”，接收一个数组，并且是将数组中的每个值，分开来，传递给调
+    */
+    </script>
+  </body>
+</html>

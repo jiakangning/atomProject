@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>javascript异步</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function a() {
+        console.time();
+        console.log('a');
+              console.timeEnd();
+      };
+      function b() {
+        // console.time();
+        a();
+        console.log('b');
+              // console.timeEnd();
+      }
+      function c(){
+        // console.time();
+        b();
+        console.log('c');
+              // console.timeEnd();
+      }
+      console.log('end');
+      c();
+
+    </script>
+  </body>
+</html>

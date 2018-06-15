@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      (function (){
+        console.log('time start');
+        setTimeout(function (){console.log('延时1000ms触发');},1000)
+        setTimeout(function (){console.log('延时0ms触发');},0)
+        console.log('time end');
+      })()
+    </script>
+  </body>
+</html>

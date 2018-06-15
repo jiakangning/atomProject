@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>4、将 JavaScript 代码包含在一个函数块中有神马意思呢？为什么要这么做？</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //换句话说，为什么要用立即执行函数表达式（Immediately-Invoked Function Expression）
+      //IIFE 有两个比较经典的使用场景，一是类似于在循环中定时输出数据项，二是类似于 JQuery/Node 的插件和模块开发。
+      for (var i = 0; i < 5; i++) {
+        setTimeout((function (i){
+          console.log(i);
+        })(i),1000);
+      }
+   
+    </script>
+  </body>
+</html>

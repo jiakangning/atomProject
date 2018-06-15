@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!--
+    为了解决这个问题，ES6 提供了 Map 数据结构。它类似于对象，也是键值对的集合，
+    但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，
+    Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，
+    是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适。
+   -->
+  </head>
+  <body>
+    <script type="text/javascript">
+      const m = new Map();
+      const o = {p:'hello world'};
+      m.set(o,'content');//Map结构的set方法，将对象o当做m的一个键
+      m.get(o) //'content'读取这个键对应的值
+      console.log(m.get(o));
+      m.has(o);
+      // map的has方法判断是否含有o键,返回布尔值
+      console.log(m.has(o));//true
+      m.delete(o);
+      //使用map的delete方法删除该键
+      console.log(m.get(o));//undefined
+
+      m.has(o);//false
+    </script>
+  </body>
+</html>

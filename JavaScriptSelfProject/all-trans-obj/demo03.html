@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组到对象的转化</title>
+</head>
+<body>
+  Javascript中原始数据类型不易发生改变，在改变length值时候，解释器会优先把当前目标转化为JavaScript对象，arr可转化为对象
+  <script type="text/javascript">
+    var arr = [12,32,10,20,54];
+    console.log(arr.length);
+    arr.length = 6;
+    console.log(arr.length);
+    console.log(arr);
+  </script>
+</body>
+</html>

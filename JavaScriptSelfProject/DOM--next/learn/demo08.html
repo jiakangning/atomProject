@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML 类型 -- 自定义特性</title>
+</head>
+<body>
+  <div id="myDiv" class="bd" title="Body text" lang="en" dir="ltr" data-SXY='SuXingYa!'>
+    fjef
+  </div>
+  <script type="text/javascript">
+  /*
+不过，特性的名称是不区分大小写的，即 "ID" 和 "id" 代表的都是同一个特性。
+另外也要注意，根据 HTML5 规范，自定义特性应该加上 data- 前缀以便验证。
+  */
+    var div =document.getElementById('myDiv');
+  var value = div.getAttribute('data-SXY');
+  console.log(value);
+  </script>
+</body>
+</html>

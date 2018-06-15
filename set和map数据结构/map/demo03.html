@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>接收数组作为参数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const map = new Map([['name','zhangsan'],['title','Nobel']]);//新建 Map 实例时，就指定了两个键name和title
+      console.log(map.size);
+      console.log(map.has('Nobel'));//has只可以查询键不可查询值
+      console.log(map.get('name'));
+     //实际操作：
+
+      const item= [
+        ['name','张三'],
+        ['skill','设计']
+      ];
+      const m = new Map();
+      item.forEach(
+        ([key,value])=>m.set(key,value)
+      )
+      console.log(m.get('skill'));
+    </script>
+  </body>
+</html>

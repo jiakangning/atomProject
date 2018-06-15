@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义滚动条</title>
+  <style media="screen">
+  html,body,div{
+    margin: 0;
+    padding: 0;
+  }
+  #parent{
+    width: 600px;
+    height: 20px;
+    background: #ccc url() 0 0 no-repeat;
+    position: relative;
+    margin: 0 auto;
+  }
+    #div1{
+      width: 20px;
+      height: 20px;
+      background: red url() 0 0 no-repeat;
+      position: absolute;
+      left: 0px;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="" id="parent">
+    <div class="roller" id="div1">
+
+    </div>
+  </div>
+  <script type="text/javascript">
+  var dom = document.getElementById('div1');
+  var parent = document.getElementById('parent');
+  var offsetX= 0;
+  var W = parent.offsetWidth-dom.offsetWidth;
+  console.log(W);
+  var ismove = false;
+  dom.addEventListener('mousedown',function (ev) {
+    var ev = ev || window.event;
+     offsetX = ev.clientX - this.offsetLeft;
+
+     ismove = true;
+  })
+  document.onmousemove = function (ev){
+    var tempX = 0;
+    var ev = ev || window.event;
+    if (ismove) {
+      tempX = ev.clientX - offsetX;
+
+      tempX = tempX > W-30 ? W : tempX < 30 ? 0 : tempX;
+
+      dom.style.left = tempX +'px';
+
+    }
+  }
+  document.onmouseup = function (ev){
+    ismove = false;
+  }
+  </script>
+</body>
+</html>

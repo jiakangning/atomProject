@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>typeof</title>
+</head>
+<body>
+  <script type="text/javascript">
+  var temp = 13
+    console.log(typeof temp === 'number');
+    console.log(typeof temp === 'string');
+    console.log(typeof temp === 'object');
+    console.log(typeof typeof(temp) === 'string'); // typeof 返回一个字符串
+    //boolean
+    console.log(typeof true === 'boolean');
+    console.log(typeof Boolean(true) === 'boolean');
+    console.log(typeof Boolean('true') === 'boolean');
+    //undefined
+    console.log( typeof undefined === 'undefined');
+    var demo1;
+    demo2 = 23
+    demo3;
+    console.log( typeof demo1 === 'undefined');//true
+    console.log( typeof demo2 === 'undefined'); //未申明，但定义了；//false
+    console.log( typeof demo3 === 'undefined'); //未申明，未定义了  Uncaught ReferenceError: demo3 is not defined；
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>location  对象--</title>
+</head>
+<body>
+  <button id="btn" onclick="">百度一下</button>
+  <script type="text/javascript">
+  /*
+* 这个函数用来解析来自URL的查询串中的name=value参数对
+* 它将name=value对存储在一个对象的属性中，并返回该对象
+* 这样来使用它
+*
+* var args = urlArgs(); // 从URL中解析参数
+* var q = args.q || ""; // 如果参数定义了的话就使用参数；否则使用一个默认值
+* var n = args.n ? parseInt(args.n) : 10;
+*/
+function urlArgs() {
+  var args = {};
+  var query = location.search.substring(1);
+  var pairs = query.split('&');
+  for (var i = 0; i < pairs.length; i++) {
+    var pos = pairs[i].indexOf('=');
+    if (pos = -1) continue;
+    var name = pairs[i].substring(0,pos);
+    var value = pairs[i].substring(pos+1);
+    value = decodeURIComponent(value);
+    args[name] = value;
+  }
+  return args;
+}
+urlArgs();
+  </script>
+</body>
+</html>

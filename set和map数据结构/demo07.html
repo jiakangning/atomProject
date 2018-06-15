@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Set与对象</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // 另外，两个对象总是不相等的。
+      let set =new Set();
+      set.add({});
+      console.log(set.size);
+      set.add({});
+      console.log(set.size);
+      // 上面代码表示，由于两个空对象不相等，所以它们被视为两个值。
+    </script>
+  </body>
+</html>

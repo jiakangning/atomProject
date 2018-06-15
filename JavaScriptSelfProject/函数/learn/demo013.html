@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数的属性和方法 --length</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+JavaScript 中的函数是对象，因此函数也有属性和方法。每个函数都包含两个属性：length 和 prototype。
+其中，length 属性表示函数希望接收的命名参数的个数，如下面的例子所示。
+  */
+  function sayHello() {
+    alert('sayHello')
+  }
+  function sayHelloTo(you) {
+    alert('sayHello' + you)
+  }
+  function sayHelloToYou(you,us) {
+    alert(you+'sayHello'+us)
+  }
+  console.log(sayHello.length);
+  console.log(sayHelloTo.length);
+  console.log(sayHelloToYou.length);
+
+
+
+  //在严格模式下，访问 arguments.callee属性，或为函数的 caller 属性赋值，都会导致错误。
+/*
+在此，变量 trueFactorial 获得了 factorial 的值，实际上是在另一个位置上保存了一个函数的指针。
+然后，我们又将一个简单地返回 0 的函数赋值给 factorial 变量。
+如果像原来的 factorial() 那样不使用 arguments.callee，调用 trueFactorial() 就会返回 0。
+可是，在解除了函数体内的代码与函数名的耦合状态之后，
+trueFactorial() 仍然能够正常地计算阶乘；至于 factorial()，它现在只是一个返回 0 的函数。
+*/
+  </script>
+</body>
+</html>

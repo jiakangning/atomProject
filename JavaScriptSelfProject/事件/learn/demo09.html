@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM1 级事件处理程序--删除</title>
+</head>
+<body>
+  <input type="button" value="Click Me"  id="myBtn">
+</body>
+
+
+<script type="text/javascript">
+// 也可以删除通过 DOM1 级方法指定的事件处理程序，只要像下面这样将事件处理程序属性的值设置为 null 即可：
+var btn = document.getElementById('myBtn');
+btn.onclick = null;
+
+</script>
+</html>

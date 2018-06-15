@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>神马是 NaN，它的类型是神马？怎么测试一个值是否等于 NaN</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      console.log(isNaN(NaN));//true
+      console.log(isNaN(23));//false
+      console.log(isNaN('hjfk'));//true
+      console.log(isNaN('2165112'));//false
+      console.log(NaN == NaN);//false
+      console.log(typeof NaN);
+      console.log(Object.prototype.toString.call(NaN));
+      //ES6 中，isNaN() 成为了 Number 的静态方法：Number.isNaN().
+    </script>
+  </body>
+</html>

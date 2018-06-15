@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>debugger 语句</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+debugger 语句通常什么也不做。然而，当浏览器的调试工具可用并运行的时候，
+JavaScript 解释器将会以调式模式运行。实际上，这条语句用来产生一个断点（breakpoint），
+JavaScript 代码的执行会停止在断点的位置，这时可以使用调试器输出变量的值、检查调用栈等。例如：
+  */
+  function f(o) {
+      if (o === undefined) {
+        console.log(123);
+          debugger;  // 程序会停止在该位置
+          console.log(234);
+      }
+      // 函数的其他部分
+  }
+  var a;
+  f(a);
+/*
+。
+*/
+  </script>
+</body>
+</html>

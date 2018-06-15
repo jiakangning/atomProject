@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>网页请求--URL、domain 和 referrer</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // URL 属性中包含页面完整的 URL（即地址栏中显示的URL），
+    // domain 属性中只包含页面的域名，
+    // 而 referrer 属性中则保存着链接到当前页面的那个页面的 URL。
+    // 在没有来源页面的情况下，referrer 属性中可能会包含空字符串。
+    // 所有这些信息都存在于请求的 HTTP 头部，
+    // 只不过是通过这些属性让我们能够在 JavaScrip 中访问它们而已，如下面的例子所示。
+    var url = document.URL;
+    console.log(url);
+    var domain = document.domain;
+    console.log(domain);
+    var referrer = document.referrer;
+    console.log(referrer);
+  </script>
+</body>
+</html>

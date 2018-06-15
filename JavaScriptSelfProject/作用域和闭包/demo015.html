@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>this关键字</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+/*
+全局上下文
+在全局上下文中，也就是在任何函数体外部，this 指代全局对象
+*/
+// 在浏览器中，this 指代全局对象 window
+console.log(this === window);  // true
+// 在函数上下文中，也就是在任何函数体内部，this 指代调用函数的那个对象。
+function f1(){
+  return this;
+}
+console.log(f1() === window);
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>事件对象--DOM 中的事件对象</title>
+</head>
+<body>
+  <input type="button" value="Click Me" id="btn"/>
+</body>
+
+
+<script type="text/javascript">
+/*
+在事件处理程序内部，对象 this 始终等于 currentTarget 的值，而 target 则只包含事件的实际目标。
+如果直接将事件处理程序指定给了目标元素，则 this、currentTarget 和 target 包含相同的值。来看下面的例子。
+
+*/
+var btn = document.getElementById('btn');
+var handler = function (ev){
+  switch (ev.type) {
+    case 'click':
+      console.log('this is clicked!');
+      break;
+    case 'mouseover':
+      ev.target.style.backgroundColor = 'red';
+      break;
+    case 'mouseout':
+      ev.target.style.backgroundColor ='green';
+      break;
+    default:
+     ev.target.style.backgroundColor = 'yello';
+      break;
+  }
+};
+btn.onclick = handler;
+btn.onmouseover = handler;
+btn.onmouseout = handler;
+btn.onmousemove = handler;
+</script>
+</html>

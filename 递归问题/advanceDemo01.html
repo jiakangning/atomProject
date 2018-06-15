@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Question1—Fibonacci数列第N项</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var fib = function (n){
+      var a1=1,a2=1,a3=0;
+      if(n<=2){
+        return 1;
+  }
+  for(var i = 0;i < n-1;i++){
+      a3 = a1 + a2;
+      a1 = a2;
+      a2 = a3;
+    }
+    return a3;
+    }
+    console.log(fib(4));
+    </script>
+  </body>
+</html>

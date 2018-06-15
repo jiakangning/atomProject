@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>字符串的替换</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var name = '  Muaneng Tuanpeng  ';
+    name = name.trim();//去掉字符串前后空格
+    console.log(name);
+    name = name.replace('eng','ing');
+    console.log(name);
+    // 正则
+    name = name.replace(/eng/g,'ing');
+    console.log(name);
+  </script>
+</body>
+</html>

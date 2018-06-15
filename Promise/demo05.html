@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Promise</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    /*
+运行代码，会在2秒后输出“执行完成”。注意！我只是new了一个对象，并没有调用它，我们传进去的函数就已经执行了，这是需要注意的一个细节。
+所以我们用Promise的时候一般是包在一个函数中，在需要的时候去运行这个函数，如：
+    */
+    function runAsync1(){
+    var p = new Promise(function(resolve, reject){
+        //做一些异步操作
+        setTimeout(function(){
+            console.log('异步任务1执行完成');
+            resolve('随便什么数据1');
+        }, 1000);
+    });
+    return p;
+}
+function runAsync2(){
+    var p = new Promise(function(resolve, reject){
+        //做一些异步操作
+        setTimeout(function(){
+            console.log('异步任务2执行完成');
+            resolve('随便什么数据2');
+        }, 2000);
+    });
+    return p;
+}
+function runAsync3(){
+    var p = new Promise(function(resolve, reject){
+        //做一些异步操作
+        setTimeout(function(){
+            console.log('异步任务3执行完成');
+            resolve('随便什么数据3');
+        }, 2000);
+    });
+    return p;
+}
+
+
+     runAsync1().then(function (data){
+       console.log(data);
+       return  runAsync2();
+     })
+     .then(function (data){
+       console.log(data);
+       return runAsync3();
+     })
+     .then(function (data){
+       console.log(data);
+     })
+    </script>
+  </body>
+</html>

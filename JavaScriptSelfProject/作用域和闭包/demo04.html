@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>作用域--全局作用域和局部作用域的关系</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // 尽管在全局作用域编写代码时可以不写 var 语句，但声明局部变量时则必须使用 var 语句。思考一下如果不这样做会怎样：
+  var scope = "global";      // 声明一个全局变量
+function checkscope() {
+    var scope = "local";   // 声明一个同名的局部变量
+    return scope;          // 返回局部变量的值，而不是全局变量的值
+}
+console.log(checkscope()); // "local"
+  </script>
+</body>
+</html>

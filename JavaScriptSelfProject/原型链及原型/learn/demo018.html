@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>_proto_</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+  JavaScript 中描述了原型链的概念，并将原型链作为实现继承的主要方法。
+  其基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。
+  简单回顾一下构造函数、原型和实例的关系：每个构造函数都有一个原型对象，
+  原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。如下图所示：
+
+
+  */
+  function Person(){}
+
+// var person = new Person();
+// 上一行代码等同于以下过程 ==>
+var person = {};
+person.__proto__ = Person.prototype;
+Person.call(person);
+  /*
+这个例子中，我先创建了一个空对象 person，
+然后把 person.__proto__ 指向了 Person 的原型对象，便继承了 Person 原型对象中的所有属性和方法，
+最后又以 person 为作用域执行了 Person 函数，
+person 便就拥有了 Person 的所有属性和方法。这个过程和 var person = new Person(); 完全一样。
+  */
+  </script>
+</body>
+</html>

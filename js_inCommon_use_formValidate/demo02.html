@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>只能是汉子</title>
+  </head>
+  <body>
+    <p>只能是汉子</p>
+    <input type="text" onblur="isChinese(this.value)" placeholder="请输入中文">
+    <script type="text/javascript">
+      function isChinese(obj){
+        var reg =/^[\u4ea0-\u9fa5]+$/;
+        if(obj==''){
+          alert('输入内容啊！')
+        }
+        else if(obj!=''&&!reg.test(obj)){
+          alert('必须输入中文!');
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>作用域--全局作用域（Global Scope）</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+任何程序设计语言都有作用域的概念，简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。
+在 JavaScript 中，变量的作用域有全局作用域和局部作用域两种。
+    */
+    // 全局作用域（Global Scope）
+    // 最外层函数和在最外层函数外面定义的变量拥有全局作用域，例如：
+var global = "global";     // 显式声明一个全局变量
+function checkscope() {
+    var local = "local";   // 显式声明一个局部变量
+    return global;         // 返回全局变量的值
+}
+console.log(scope);        // "global"
+console.log(checkscope()); // "global"
+console.log(local);        // error: local is not defined.
+// 上面代码中，global 是全局变量，不管是在 checkscope() 函数内部还是外部，都能访问到全局变量 global。
+  </script>
+</body>
+</html>

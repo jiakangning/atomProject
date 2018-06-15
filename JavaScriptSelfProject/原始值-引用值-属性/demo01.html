@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>javascript 检测原始值</title>
+</head>
+<body>
+  <script type="text/javascript">
+  var arr = [];
+    const controller = {
+      process : function (items) {
+        if (items !== null) { // 此处应该是检测数组的方法
+          items.sort();
+          items.forEach(function (items) {
+            arr.push(items);
+          })
+        }
+      }
+    }
+
+    controller.process([1,2,3,45,6,7,8,9,6,5]);
+    console.log(arr);
+  </script>
+</body>
+</html>

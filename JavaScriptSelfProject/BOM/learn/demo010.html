@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>history对象</title>
+</head>
+    <body>
+    <p>Enjoy this page for a second, because you won't be coming back here.</p>
+    <button id="btn11" onclick="replacer();">跳转</button>
+    <button id="btn12" onclick="backer();">向前</button>
+    <button id="btn13" onclick="forwarder();">向后</button>
+    <script type="text/javascript">
+        /*
+history 对象保存着用户上网的历史记录，从窗口被打开的那一刻算起。
+因为 history 是 window 对象的属性，因此每个浏览器窗口、每个标签页乃至每个框架，
+都有自己的 history 对象与特定的 window 对象关联。出于安全方面的考虑，开发人员无法得知用户浏览过的 URL。
+不过，借由用户访问过的页面列表，同样可以在不知道实际 URL 的情况下实现后退和前进。
+
+使用 go() 方法可以在用户的历史记录中任意跳转，可以向后也可以向前。这个方法接受一个参数，
+表示向后或向前跳转的页面数的一个整数值。负数表示向后跳转（类似于单击浏览器的“后退”按钮），
+正数表示向前跳转（类似于单击浏览器的“前进”按钮）。来看下面的例子。
+        */
+        // history.go(-1);
+        // history.go(1);
+        // history.go(2);
+        // history.go('http://shijiajie.com/');
+        // 后退一页
+        function replacer() {
+          location.replace('https://www.baidu.com');
+        }
+        function backer() {
+          history.back();
+        }
+        function forwarder() {
+          history.forward();
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ES5对象</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function Person(name,age) {
+      this.name = name;
+      this.age = age;
+    }
+    Person.prototype.showName = function (){
+      alert(this.name);
+    }
+    Person.prototype.showAge = function () {
+      alert(this.age);
+    }
+    var p1 = new Person('zhangsan',30);
+    p1.showName();
+    p1.showAge();
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Tetris</title>
+  <style media="screen">
+  html,body{
+    width: 100%;
+    height: 100%;
+  }
+  html,body,div{
+    margin: 0;
+    padding: 0;
+  }
+    div.activityModel{
+      margin: 1px;
+      width: 19px;
+      height: 19px;
+      background: red url() 0 0 no-repeat;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="activityModel" id="target"></div>
+  <script type="text/javascript">
+  var target = document.getElementById('target');
+  var speed = 20;
+  var result_x = 0,result_y = 0;
+     document.onkeydown = function (ev) {
+      var ev = ev || window.event || arguments.callee.caller.arguments[0];
+      if (ev && ev.keyCode == 38) {
+        // alert('Top！');
+        result_y += -speed;
+      }
+      if (ev && ev.keyCode == 37) {
+        // alert('Left!');
+          result_x += -speed;
+      }
+      if (ev && ev.keyCode == 40) {
+        // alert('Down!');
+          result_y += speed;
+      }
+      if (ev && ev.keyCode == 39) {
+        // alert('Right!');
+          result_x += speed;
+      }
+      target.style.top = result_y + 'px';
+      target.style.left = result_x + 'px';
+     }
+  </script>
+</body>
+</html>

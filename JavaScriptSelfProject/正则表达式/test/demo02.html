@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>至少3位数字</title>
+</head>
+<body>
+  <script type="text/javascript">
+  var pattern = /\d{3,}$/;
+    console.log(pattern.test('1234'));//true
+    console.log(pattern.test('abc'));//false
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ES6.0</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    let uniq = function (arr){
+      arr.sort((a,b) => a>b);
+      return  arr.filter((ele,index,array) => index === array.indexOf(ele));
+    }
+      let arr = [12,41,12,45,4,5,54,5,15,4,5,15,41,54,96];
+      console.log(uniq(arr));
+    </script>
+  </body>
+</html>

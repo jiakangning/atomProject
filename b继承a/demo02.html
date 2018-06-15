@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>原型链继承</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function fn(){
+      this.a = 0;
+      this.b = function (){
+        alert(this.a);
+      }
+    }
+    fn.prototype ={ //通过原型链继承的方法的优先级低于原对象的方法
+      b:function (){
+        this.a = 20;
+        alert(this.a);
+      },
+      c:function (){
+        this.a = 30;
+        alert(this.a);
+      }
+    };
+    var myfn = new fn();
+    myfn.b(); // 0
+    myfn.c(); // 30
+    </script>
+  </body>
+</html>

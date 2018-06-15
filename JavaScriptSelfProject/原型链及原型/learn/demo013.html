@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>原生对象的原型</title>
+</head>
+<body>
+  <script type="text/javascript">
+// 下面的代码就给基本包装类型 String 添加了一个名为 startsWith() 的方法。
+String.prototype.startsWith = function(text){
+  return this.indexOf(text) ==0
+}
+var str = 'hello world!';
+console.log(str.startsWith('world'));//false
+  </script>
+</body>
+</html>

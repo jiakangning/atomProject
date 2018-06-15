@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RegExp test</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+  在这个例子中，我们使用正则表达式来测试了一个数字序列。如果输入的文本与模式匹配，则显示一条消息。
+  这种用法经常出现在验证用户输入的情况下，因为我们只想知道输入是不是有效，至于它为什么无效就无关紧要了。
+  */
+var pattern = new RegExp('\\[bc\\]at','gi');
+console.log(pattern.toString());///\[bc\]at/gi
+console.log(pattern.toLocaleString());///\[bc\]at/gi
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>关卡三</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // 挑战二
+  function showCase(value) {
+      switch (value) {
+          case 'A':
+              console.log('Case A');
+              break;
+          case 'B':
+              console.log('Case B');
+              break;
+          case undefined:
+              console.log('undefined');
+              break;
+          default:
+              console.log('Do not know!');
+      }
+  }
+  var demo =  new String('ABCDEFG'); //对象 而非字符串
+  var str = '';
+  for (var i = 0; i < demo.length; i++) {
+    str += demo[i];
+  }
+  console.log(str);
+  var ttemp = 'A';
+  showCase(ttemp);   // case a
+  </script>
+</body>
+</html>

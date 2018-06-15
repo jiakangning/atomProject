@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>_proto_</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+  图中展示了 Person 构造函数、Person 的原型属性以及 Person 现有的两个实例之间的关系。
+  在此，Person.prototype.constructor 指回了 Person。
+  Person.prototype 中除了包含 constructor 属性之外，还包括后来添加的其他属性。
+  此外，要格外注意的是，虽然这两个实例都不包含属性和方法，但我们却可以调用 person1.sayName()。
+  这是因为内部指针 __proto__ 指向 Person.prototype，而在 Person.prototype 中能找到 sayName() 方法。
+
+
+  */
+  function Person(){}
+var person = new Person();
+console.log(person.__proto__ === Person.prototype); // true
+
+  /*
+
+  */
+  </script>
+</body>
+</html>

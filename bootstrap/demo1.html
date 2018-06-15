@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title id="title">容器</title>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <style media="screen">
+    .container{
+      height: 100px;
+      border: 1px solid red;
+    }
+    .container-fluid{
+      height: 100px;
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container"></div>
+  <div class="container-fluid"></div>
+  <script type="text/javascript">
+    var view = document.querySelector('#title');
+    var w = window.innerWidth;
+    var ow = document.querySelector('.container').offsetWidth;
+    view.innerHTML = ow;
+    window.onresize = function () {
+      var ow = document.querySelector('.container').offsetWidth;
+      view.innerHTML = ow;
+      console.log(ow);
+    }
+  </script>
+</body>
+</html>

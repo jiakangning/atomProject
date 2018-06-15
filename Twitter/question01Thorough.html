@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>深入对象</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const a={
+        num:0,
+        valueOf:function(){
+          return this.num+=1;
+        }
+      }
+      console.log(a.valueOf());
+      console.log(a.valueOf());
+      console.log(a.valueOf());
+      console.log(a.valueOf());
+      console.log(a.valueOf(),a.num);
+
+    </script>
+  </body>
+</html>

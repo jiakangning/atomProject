@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+一个数如果恰好等于它的各因子（该数本身除外）子和，
+如：6=3+2+1，则称其为“完数”；若因子之和大于该数，
+则称其为“盈数”。求出2到60之间所有“完数”和“盈数”，
+并以如下形式输出： E: e1 e2 e3 ......(ei为完数) G: g1 g2 g3 ......(gi为盈数)
+
+      */
+      var arr1=[],
+          arr2=[];
+      for (var i = 2; i < 60; i++) {
+        var sum=0;
+        for (var j = 1; j < i; j++) {
+          if (i%j==0) {
+            sum+=j;
+          }
+        }
+        if (sum>i) {
+          arr1.push(i);
+        }else if (sum==i) {
+          arr2.push(i);
+        }
+      }
+      console.log('盈数有E：'+arr1);
+      console.log('完数有G：'+arr2);
+    </script>
+  </body>
+</html>

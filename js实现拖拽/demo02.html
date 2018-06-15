@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+  #dragCircle {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background: #bcbcbc;
+position: absolute;
+text-align: center;
+line-height: 100px;
+}
+  </style>
+</head>
+<body>
+  <div id="dragCircle">来拖我呀</div>
+  <script type="text/javascript">
+  window.onload = function() {
+  var dragCircle = document.getElementById('dragCircle');
+// 获取鼠标点击时在div中的相对位置
+  dragCircle.onmousedown = function(ev) {
+      var ev = ev || window.event;
+
+      var relaX = ev.clientX - this.offsetLeft;
+      var relaY = ev.clientY - this.offsetTop;
+
+// 获取当前鼠标位置，减去与div的相对位置得到当前div应该被拖拽的位置
+      document.onmousemove = function(ev) {
+          var ev = ev || window.event;
+          dragCircle.style.left = ev.clientX - relaX + 'px';
+          dragCircle.style.top = ev.clientY - relaY + 'px';
+      };
+      document.onmouseup = function(ev) {
+        var ev = ev || window.event;
+        document.onmousemove = null;
+        document.onmouseup = null;
+       }
+   }
+}
+  </script>
+</body>
+</html>

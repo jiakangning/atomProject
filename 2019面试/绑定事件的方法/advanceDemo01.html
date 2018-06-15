@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>事件监听优化onclick事件</title>
+  </head>
+  <body>
+    <button type="button" name="button" id="btn">按钮</button>
+    <script type="text/javascript">
+      document.getElementById('btn').addEventListener('click',function (){
+        alert(1)
+      })
+      // ie兼容性写法 ie6,7,8
+      // document.getElementById('btn').attachEvent('click',function (){
+      //   alert(1)
+      // })
+    </script>
+  </body>
+</html>

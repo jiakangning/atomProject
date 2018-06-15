@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>throw 语句</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+大部分值都可以使用继承而来的 toString()方法转换为字符串，但 undefined 和 null 值没有这个方法。
+对数值使用 toString() 方法时，可以传入一个数字基数，以此输出对应进制的字符串值。例如：
+    */
+  function functionName(x) {
+    if (x<0) throw new Error('x不能是负数');
+    for (var f = 1;x > 1; f *= x, x --) {
+      return f;
+    }
+  }
+  functionName(-2)
+  </script>
+</body>
+</html>

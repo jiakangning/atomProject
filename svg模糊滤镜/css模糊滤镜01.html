@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    .blur{
+      filter: url(blur,svg#blur);  /* firefox chrome Opera */
+      -webkit-filter:blur(10px);
+      -moz-filter:blur(10px);
+      -ms-filter:blur(10px);
+      filter:blur(10px);
+      filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* ie6 - ie9 */
+    }
+  </style>
+</head>
+<body>
+  <img src="lilyLikeXy.jpg" alt="">
+  <img src="lilyLikeXy.jpg" alt="" class="blur">
+</body>
+</html>

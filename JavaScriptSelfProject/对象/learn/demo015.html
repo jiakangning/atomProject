@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>枚举属性</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+    除了检测对象的属性是否存在，我们还会经常遍历对象的属性。
+    通常使用 for-in 循环遍历，ECMAScript 5 提供了两个更好用的替代方案。
+
+for-in 循环可以在循环体中遍历对象中所有可枚举的属性（包括自有属性和继承的属性），
+把属性名称赋值给循环变量。对象继承的内置方法不可枚举的，但在代码中给对象添加的属性都是可枚举的。例如：
+    */
+
+    var o = {x:1, y:2, z:3};
+    console.log(o.propertyIsEnumerable("x"));           // 三个可枚举的自有属性
+    console.log(o.propertyIsEnumerable("toString")); // false，不可枚举
+    for (p in o) {          // 遍历属性
+        console.log(p);     // 输出x、y和z，不会输出toString
+    }
+  </script>
+</body>
+</html>

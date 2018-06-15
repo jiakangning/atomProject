@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>操作节点</title>
+</head>
+<body>
+  <!--
+  因为关系指针都是只读的，所以 DOM 提供了一些操作节点的方法。
+  其中，最常用的方法是 appendChild()，用于向 childNodes 列表的末尾添加一个节点。
+  添加节点后，childNodes 的新增节点、父节点及以前的最后一个子节点的关系指针都会相应地得到更新。
+  更新完成后，appendChild() 返回新增的节点。来看下面的例子：
+ -->
+<div class="" id="test">
+<input type="text" name="" value="" id="inp">
+</div>
+ <script type="text/javascript">
+ /*
+ Node.ELEMENT_NODE(1)；
+ Node.ATTRIBUTE_NODE(2)；
+ Node.TEXT_NODE(3)；
+ Node.CDATA_SECTION_NODE(4)；
+ Node.ENTITY_REFERENCE_NODE(5)；
+ Node.ENTITY_NODE(6)；
+ Node.PROCESSING_INSTRUCTION_NODE(7)；
+ Node.COMMENT_NODE(8)；
+ Node.DOCUMENT_NODE(9)；
+ Node.DOCUMENT_TYPE_NODE(10)；
+ Node.DOCUMENT_FRAGMENT_NODE(11)；
+ Node.NOTATION_NODE(12)。
+
+ */
+ // 每个节点都有一个 parentNode 属性，该属性指向文档树中的父节点。
+ // 包含在 childNodes 列表中的所有节点都具有相同的父节点，因此它们的 parentNode 属性都指向同一个节点。
+ // 此外，包含在 childNodes 列表中的每个节点相互之间都是同胞节点。
+ // 通过使用列表中每个节点的 previousSibling 和 nextSibling 属性，可以访问同一列表中的其他节点。
+ // 列表中第一个节点的 previousSibling 属性值为 null，而列表中最后一个节点的 nextSibling 属性的值同样也为 null，
+ // 如下面的例子所示：
+var test = document.getElementById('test');
+var newNode = document.createElement('div');
+ var returnedNode = test.appendChild(newNode);
+ console.log(returnedNode == newNode);         // true
+ console.log(test.lastChild == newNode);   // true
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!--
+型链是一种机制，指的是 JavaScript 每个对象都有一个内置的 __proto__ 属性指向创建它的构造函数的 prototype（原型）属性。
+原型链的作用是为了实现对象的继承，
+要理解原型链，需要先从函数对象、constructor、new、prototype、__proto__ 这五个概念入手。
+ -->
+ <script type="text/javascript">
+   var o1 = {};
+   var o2 = new Object();
+   // 函数对象
+   function f1(){};
+   var f2 = function (){};
+   var f3 = new Function('str','console.log(str)');
+   // 简单的说，凡是使用 function 关键字或 Function 构造函数创建的对象都是函数对象。
+   // 而且，只有函数对象才拥有 prototype （原型）属性。
+ </script>
+</body>
+</html>

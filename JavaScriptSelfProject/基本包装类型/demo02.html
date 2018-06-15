@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>基本包装类型</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+这个例子中的变量 s1 包含一个字符串，字符串当然是基本类型值。而下一行调用了 s1 的 substring() 方法，
+并将返回的结果保存在了 s2 中。我们知道，基本类型值不是对象，因而从逻辑上讲它们不应该有方法
+（尽管如我们所愿，它们确实有方法）。
+其实，为了让我们实现这种直观的操作，后台已经自动完成了一系列的处理。当第二行代码访问 s1 时，
+访问过程处于一种读取模式，也就是要从内存中读取这个字符串的值。
+而在读取模式中访问字符串时，后台都会自动完成下列处理。
+1.创建一个string类型的实例
+2.在实例上调用指定的方法
+3.销毁这个实例
+var s1 = new String('some text');
+s1.substring(2);
+s1 = null;
+    */
+    var s1 = 'some text';
+    var s2 = s1.substring(2);
+    console.log(s2);
+    console.log(s1);
+
+    /*
+经过此番处理，基本的字符串值就变得跟对象一样了。
+而且，上面这三个步骤也分别适用于 Boolean 和 Number 类型对应的布尔值和数字值。
+    */
+  </script>
+</body>
+</html>

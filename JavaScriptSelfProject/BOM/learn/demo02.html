@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>window 对象--窗口关系及框架</title>
+</head>
+<body>
+  <button id="btn" onclick="alertWindow();">百度一下</button>
+  <script type="text/javascript">
+    /*
+    设置	值	说明
+    fullscreen	yes或no	表示浏览器窗口是否最大化。仅限IE
+    height	数值	表示新窗口的高度。不能小于100
+    left	数值	表示新窗口的左坐标。不能是负值
+    location	yes或no	表示是否在浏览器窗口中显示地址栏。不同浏览器的默认值不同。如果设置为no，
+    地址栏可能会隐藏，也可能会被禁用（取决于浏览器）
+    menubar	yes或no	表示是否在浏览器窗口中显示菜单栏。默认值为no
+    resizable	yes或no	表示是否可以通过拖动浏览器窗口的边框改变其大小。默认值为no
+    scrollbars	yes或no	表示如果内容在视口中显示不下，是否允许滚动。默认值为no
+    status	yes或no	表示是否在浏览器窗口中显示状态栏。默认值为no
+    toolbar	yes或no	表示是否在浏览器窗口中显示工具栏。默认值为no
+    top	数值	表示新窗口的上坐标。不能是负值
+    width	数值	表示新窗口的宽度。不能小于100
+    */
+  function alertWindow() {
+    window.open('https://www.baidu.com','newWindow','height=400px,width=400,top=10,left=10,resizable=yes');
+    win.resizeTo(500,500);
+    win.moveTo(100,100);
+    win.close();
+  }
+
+    /*
+
+    */
+  </script>
+</body>
+</html>

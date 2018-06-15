@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>没有重载</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // 将函数名想象为指针，也有助于理解为什么 JavaScript 中没有函数重载的概念
+    function addSomeNumber(num) {
+      return  num + 100;
+    }
+    function addSomeNumber(num) {
+      return  num + 200;
+    }
+    var result = addSomeNumber(100);
+    console.log(result);//300
+    //由于函数名仅仅是指向函数的指针，因此函数名与包含对象指针的其他变量没有什么不同。换句话说，一个函数可能会有多个名字。
+  </script>
+</body>
+</html>

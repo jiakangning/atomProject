@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>call和apply</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var obj = {a:'custom'};
+      var a = 'global';
+      function whatsThis(arg){
+        return this.a; //this的值取决于函数的调用方式
+      }
+      console.log(whatsThis());//global
+      console.log(whatsThis.call(obj));//custom
+      console.log(whatsThis.apply(obj));//custom
+    </script>
+  </body>
+</html>

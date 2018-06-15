@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // (a==1 && a==2 && a==3)结果是否可为true
+      /*
+      在执行强制类型转换时，JavaScript首先尝试调用该valueOf()方法。
+      由于我们已经在该对象的定义中改变了valueOf()并返回a.num，这是一个数字，所以以下等式的结果也是相等：
+      */
+      const a={
+        num:0,
+        valueOf:function(){
+          return this.num+=1;
+        }
+      }
+      const equality = (a==1 && a==2 && a==3);
+      console.log(equality);
+    </script>
+  </body>
+</html>

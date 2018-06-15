@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML 类型 -- 创建文本节点</title>
+</head>
+<body>
+  <!-- 没有内容，也就没有文本节点 -->
+<div ></div>
+
+<!-- 有空格，因而有一个文本节点 -->
+<div id="test"> </div>
+
+
+
+  <script lang="en">
+    var textNode = document.createTextNode('<strong>Hello</strong>World!');
+    var div = document.getElementById('test');
+    div.appendChild(textNode);
+    // 在创建新文本节点的同时，也会为其设置 ownerDocument 属性。不过，除非把新节点添加到文档树中已经存在的节点中，
+    // 否则我们不会在浏览器窗口中看到新节点。下面的代码会创建一个 <div> 元素并向其中添加一条消息。
+
+  </script>
+</body>
+</html>

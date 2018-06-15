@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>为什么JavaScript里面typeof(null)的值是"object"</title>
+</head>
+<body>
+  <pre>
+    1. null不是一个空引用, 而是一个原始值, 参考ECMAScript5.1中文版 4.3.11节;
+     它只是期望此处将引用一个对象, 注意是"期望", 参考 null - JavaScript.
+     2. typeof null结果是object, 这是个历史遗留bug,
+     参考 typeof - JavaScript3. 在ECMA6中, 曾经有提案为历史平凡,
+     将type null的值纠正为null, 但最后提案被拒了.
+      理由是历史遗留代码太多, 不想得罪人, 不如继续将错就错当和事老
+  </pre>
+  <script type="text/javascript">
+  var temp = null;
+  console.log(typeof temp);//object;
+  console.log(Number(temp)); //0
+  
+  </script>
+</body>
+</html>

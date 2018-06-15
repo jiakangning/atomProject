@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IE 事件对象</title>
+</head>
+<body>
+  <input type="button" value="Click Me" id="myBtn"/>
+</body>
+
+<a href="http://www.baidu.com" id="link">百度一下</a>
+
+<script type="text/javascript">
+/*
+事件对象的 eventPhase 属性，可以用来确定事件当前正位于事件流的哪个阶段。
+如果是在捕获阶段调用的事件处理程序，那么 eventPhase 等于 1；
+如果事件处理程序处于目标对象上，则 eventPhase 等于 2；如果是在冒泡阶段调用的事件处理程序，eventPhase 等于 3。
+这里要注意的是，尽管“处于目标”发生在冒泡阶段，但 eventPhase 仍然一直等于 2。来看下面的例子。
+
+*/
+var btn = document.getElementById("myBtn");
+btn.onclick = function(){
+    console.log("Clicked");
+    window.event.cancelBubble = true; //ie chrome均兼荣
+};
+document.body.onclick = function(){
+    console.log("Body clicked");
+};
+</script>
+</html>

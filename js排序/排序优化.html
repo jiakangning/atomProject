@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>冒泡排序优化</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var arr=[66,12,5,14,63,33,87,92];
+      var temp,on_off;
+      for(var i=0;i<arr.length;i++){
+          on_off=true;
+        for(var j=0;j<arr.length-1;j++){
+
+          if(arr[j]>arr[j+1]){
+            temp=arr[j];
+            arr[j]=arr[j+1];
+            arr[j+1]=temp;
+            console.log('交换了');
+            on_off=false;             //执行内嵌if语句，则将开关关闭，防止进入下面的if语句
+          }
+
+        }
+        if(on_off){                   //开关为true才执行，此时break将跳出for循环语句
+          break;
+        }
+        console.log(i);              //跳出for循环语句，将不执行log语句
+      }
+      console.log(arr);
+    </script>
+  </body>
+</html>

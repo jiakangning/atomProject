@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>关卡一</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // 挑战六
+  var name = "The Window";　　
+  var object = {　　　　
+      name: "My Object",
+      getNameFunc: function() {　　　　　　
+          var that = this;　　　　　　
+          return function() {　　　　　　　　
+              return that.name;　　　　//一经创建，即被销毁　　
+          };　　　　
+      }　　
+  };　　
+  console.log(object.getNameFunc()());    // "My Object"
+  </script>
+</body>
+</html>

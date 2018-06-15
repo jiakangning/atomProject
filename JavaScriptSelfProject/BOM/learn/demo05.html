@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>window 对象--系统对话框</title>
+</head>
+<body>
+  <button id="btn" onclick="">百度一下</button>
+  <script type="text/javascript">
+    /*
+    最后一种对话框是通过调用 prompt() 方法生成的，这是一个“提示”框，用于提示用户输入一些文本。
+    提示框中除了显示 OK 和 Cancel 按钮之外，还会显示一个文本输入域，以供用户在其中输入内容。
+    prompt() 方法接受两个参数：要显示给用户的文本提示和文本输入域的默认值（可以是一个空字符串）。
+
+如果用户单击了 OK 按钮，则 promp() 返回文本输入域的值；
+如果用户单击了 Cancel 或没有单击 OK 而是通过其他方式关闭了对话框，则该方法返回 null。下面是一个例子。
+    */
+    var result = prompt('what is your name?','');
+    if (result != null) {
+      alert('Welcom' + result);
+    }
+    /*
+
+    */
+  </script>
+</body>
+</html>

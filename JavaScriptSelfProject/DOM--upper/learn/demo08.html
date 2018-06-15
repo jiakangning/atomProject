@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document 类型</title>
+</head>
+<body>
+  <!--
+  avaScript 通过 Document 类型表示文档。在浏览器中，document 对象是 HTMLDocument（继承自 Document 类型）的一个实例，
+  表示整个 HTML 页面。而且，document 对象是 window 对象的一个属性，因此可以将其作为全局对象来访问。
+  Document 节点具有下列特征：
+ -->
+<div class="" id="test">
+<input type="text" name="" value="" id="inp">
+</div>
+ <script type="text/javascript">
+var html = document.documentElement;
+console.log(html == document.childNodes[0]);//false
+console.log(html == document.firstChild);//false
+ </script>
+</body>
+</html>

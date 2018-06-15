@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>报7游戏的安全数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+         游戏玩儿法就是，大家轮流报数，如果报到能被7整除的数字，或者尾数是7的数字，都算踩地雷了。就应该罚唱歌。
+         输入1-600内的报7数
+       */
+       for (var i = 0; i < 600; i++) {
+          if (i%7==0 || i%100%10==7) {
+            console.log(i);
+          }
+       }
+    </script>
+  </body>
+</html>

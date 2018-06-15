@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>方法一</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 临时变量法：
+      var a=12,
+          b=5;
+      var temp;
+      function exchange(){
+        temp=a;
+        a=b;
+        b=temp;
+        console.log(a,b);
+      }
+      exchange();
+    </script>
+  </body>
+</html>

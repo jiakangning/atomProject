@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // 数组中每个单词大写，做 Base64
+
+
+// 一般写法 (其中一种)
+const arr = ['pen', 'apple', 'applypen'];
+const rs = [];
+for(const w of arr){
+rs.push(btoa(w.toUpperCase()));
+}
+console.log(rs);
+
+    </script>
+  </body>
+</html>

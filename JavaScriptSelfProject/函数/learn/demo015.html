@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数的属性和方法 --apply</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+每个函数都包含两个非继承而来的方法：apply() 和 call()。
+这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内 this 对象的值。首先，apply() 方法接收两个参数：
+
+一个是在其中运行函数的作用域，另一个是参数数组。
+
+其中，第二个参数可以是 Array 的实例，也可以是 arguments 对象。
+  */
+  function sum(num1,num2) {
+    return num1 + num2;
+  }
+function callSum1(num1,num2) {
+  return sum.apply(this,arguments);
+}
+function callSum2(num1,num2) {
+  return sum.apply(this,[num1,num2]);
+}
+console.log(callSum1(10,10));
+console.log(callSum2(10,10));
+
+  //在严格模式下，访问 arguments.callee属性，或为函数的 caller 属性赋值，都会导致错误。
+/*
+在此，变量 trueFactorial 获得了 factorial 的值，实际上是在另一个位置上保存了一个函数的指针。
+然后，我们又将一个简单地返回 0 的函数赋值给 factorial 变量。
+如果像原来的 factorial() 那样不使用 arguments.callee，调用 trueFactorial() 就会返回 0。
+可是，在解除了函数体内的代码与函数名的耦合状态之后，
+trueFactorial() 仍然能够正常地计算阶乘；至于 factorial()，它现在只是一个返回 0 的函数。
+*/
+  </script>
+</body>
+</html>

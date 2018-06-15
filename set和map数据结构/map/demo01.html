@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>含义和基本</title>
+  </head>
+  <body>
+    <p id="mydiv">
+
+    </p>
+    <script type="text/javascript">
+      /*
+      JavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键。
+      这给它的使用带来了很大的限制。
+      */
+      const data = {};
+      const element = document.getElementById('mydiv');
+      data[element] = 'metadata';
+      console.log(data[element]);
+      console.log(data['[object HTMLDivElement]']); // 'metadata'
+    </script>
+  </body>
+</html>

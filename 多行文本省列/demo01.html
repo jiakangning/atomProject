@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>多行文本省略 WEBKIT</title>
+    <style media="screen">
+      .text{
+        width: 300px;
+        height: auto;
+        border: 1px solid red;
+      }
+      p{
+        width: 100%;
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-line-clamp:2;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="text">
+    <p class="line">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eum, quis sapiente cumque neque magni! Mollitia dolorem earum, blanditiis, officiis sit, quisquam voluptatem id enim fuga, similique fugit ea maiores?</p>
+  </div>
+  </body>
+</html>

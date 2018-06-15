@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>作用域--全局作用域和局部作用域的关系</title>
+</head>
+<body>
+  <script type="text/javascript">
+  function test(o) {
+    var i = 0; // i在整个函数体内均是有定义的
+    if (typeof o == "object") {
+        var j = 0; // j在函数体内是有定义的，不仅仅是在这个代码段内
+        for (var k = 0; k < 10; k++) { // k在函数体内是有定义的，不仅仅是在循环内
+            console.log(k); // 输出数字0~9
+        }
+        console.log(k); // k已经定义了，输出10
+    }
+    console.log(j); // j已经定义了，但可能没有初始化
+}
+var a = {};
+test(a)
+  </script>
+</body>
+</html>

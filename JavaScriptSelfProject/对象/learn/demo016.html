@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>枚举属性</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+    除了检测对象的属性是否存在，我们还会经常遍历对象的属性。
+    通常使用 for-in 循环遍历，ECMAScript 5 提供了两个更好用的替代方案。
+
+有许多实用工具库给 Object.prototype 添加了新的方法或属性，
+这些方法和属性可以被所有对象继承并使用。然而在 ECMAScript 5 标准之前，
+这些新添加的方法是不能定义为不可枚举的，因此它们都可以在 for-in 循环中枚举出来。
+为了避免这种情况，需要过滤 for-in 循环返回的属性，下面两种方式是最常见的：
+    */
+
+    var o = {x:1, y:2, z:3};
+    for(p in o) {
+   if (!o.hasOwnProperty(p)) continue;          // 跳过继承的属性
+   if (typeof o[p] === "function") continue;    // 跳过方法
+}
+/*
+除了 for-in 循环之外，ECMAScript 5 定义了两个用以枚举属性名称的函数。
+第一个是 Object.keys()，它返回一个数组，这个数组由对象中可枚举的自有属性的名称组成。
+第二个是 Object.getOwnPropertyNames()，它和 Ojbect.keys() 类似，只是它返回对象的所有自有属性的名称，
+而不仅仅是可枚举的属性。在 ECMAScript 3 中是无法实现的类似的函数的，
+因为 ECMAScript 3 中没有提供任何方法来获取对象不可枚举的属性。
+*/
+  </script>
+</body>
+</html>

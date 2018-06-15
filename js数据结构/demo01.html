@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>js数据结构</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let obj = {
+        '.':'我是 . 的属性值',
+        '':'我是 空 的属性值'
+      }
+      // console.log(obj.'.');
+      console.log(obj['.']);
+      console.log(obj['']);
+
+      var foo = {a: 'alpha', 2: 'two'};
+console.log(foo.a);    // alpha
+console.log(foo[2]);   // two
+//console.log(foo.2);  // Error: missing ) after argument list
+//console.log(foo[a]); // Error: a is not defined
+console.log(foo['a']); // alpha
+console.log(foo['2']); // two
+    </script>
+  </body>
+</html>

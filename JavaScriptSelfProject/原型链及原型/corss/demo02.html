@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>challenge</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // 挑战一
+// 1.定义一个构造函数 Animal，它有一个 name 属性，以及一个 eat() 原型方法。
+// 2.eat() 的方法体为：console.log(this.name + " is eating something.")。
+// 3.new 一个 Animal 的实例 tiger，然后调用 eat() 方法。
+// 4.用 __proto__ 模拟 new Animal() 的过程，然后调用 eat() 方法。
+function Animal(name) {
+  this.name = name;
+}
+Animal.prototype.eat = function () {
+  console.log(this.name + 'is eating something!');
+}
+var tiger = {};
+tiger.__proto__ = Animal.prototype;
+Animal.call(tiger,'tiger');
+tiger.eat();
+// var Animal = function(name){
+//     this.name = name;
+// };
+//
+// Animal.prototype.eat = function(){
+//       console.log(this.name + " is eating something.");
+// };
+//
+// // var tiger = new Animal("tiger");
+// // tiger.eat();
+//
+// var tiger2 = {};
+// tiger2.__proto__ = Animal.prototype;
+// Animal.call(tiger2, "tiger2");
+// tiger2.eat();
+  </script>
+</body>
+</html>

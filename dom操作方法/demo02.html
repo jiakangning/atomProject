@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HTML DOM 定义了访问和操作HTML文档的标准方法</title>
+  </head>
+  <body>
+    <a href="http://www.baidu.com">百度</a>
+    <script type="text/javascript">
+      /*
+      all
+      forms
+      images
+      links
+      body
+      anchors 获取页面中的所有的锚连接.
+      */
+      // 获取dom 树, 获取document 对象.
+      var dom = window.document;
+      function gain_dom_all(){
+        var dom_anchors = dom.anchors;
+        console.log(dom_anchors.length);
+        // for (var i = 0; i < dom_anchors.length; i++) {
+        //   console.log(dom_all[i]);
+        // }
+      }
+      gain_dom_all();
+    </script>
+  </body>
+</html>

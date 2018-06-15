@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var obj = {
+        property:'我是原属性'
+      }
+      const obj2 = Object.freeze(obj);
+      obj.property = '我是原对象要修改属性';
+      obj2.property = '我是修改后的属性';
+      console.log(obj.property);
+    </script>
+  </body>
+</html>

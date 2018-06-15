@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>基本包装类型 --Number 类型</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+这里给 toFixed() 方法传入了数值 2，意思是显示几位小数。于是，这个方法返回了 "10.00"，即以 0 填补了必要的小数位。
+如果数值本身包含的小数位比指定的还多，那么接近指定的最大小数位的值就会舍入，如下面的例子所示。
+*/
+var num = 10.005;
+console.log(num.toFixed(2));//10.01
+
+
+
+/*
+但需要注意的是，不同浏览器给这个方法设定的舍入规则可能会有所不同。
+
+在给 toFixed() 传入0的情况下，IE8 及之前版本不能正确舍入范围在{(-0.94,-0.5],[0.5,0.94)}之间的值。对于这个范围内的值，IE8 会返回0，而不是-1或1；其他浏览器都能返回正确的值。IE9 修复了这个问题。
+
+toFixed() 方法可以表示带有0到20个小数位的数值。但这只是标准实现的范围，有些浏览器也可能支持更多位数。
+*/
+  </script>
+</body>
+</html>

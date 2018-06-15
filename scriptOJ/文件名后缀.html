@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    const extname = (filename) => {
+      const num = filename.indexOf('.');
+      if(num==0){
+        return '';
+      }else if (num==-1) {
+        return '';
+      }
+      else{
+        return filename.substring(filename.lastIndexOf('.'),filename.length);
+      }
+    }
+console.log(extname('hello'));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>检测属性</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+    然而有一种场景只能使用 in 运算符而不能使用上述属性访问的方式。
+    in 可以区分不存在的属性和存在但值为 undefined 的属性。例如：
+    */
+
+    var o = { x: 1 }
+console.log(o.x !== undefined);              // true，x是o的属性
+console.log(o.y !== undefined);              // false，y不是o的属性
+console.log(o.toString !== undefined);       // true，toString是继承属性
+
+  </script>
+</body>
+</html>

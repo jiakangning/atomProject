@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>查找元素</title>
+</head>
+<body>
+  <div id="myDiv">Some text</div>
+  <img src="https://inews.gtimg.com/newsapp_match/0/3970686116/0" alt="">
+  <script type="text/javascript">
+  var images = document.getElementsByTagName("img");
+// 这行代码会将一个 HTMLCollection 对象保存在 images 变量中。与 NodeList 对象类似，可以使用方括号语法或 item() 方法来访问 HTMLCollection 对象中的项。而这个对象中元素的数量则可以通过其 length 属性取得，如下面的例子所示。
+
+var allElements = document.getElementsByTagName("*");
+console.log(allElements);
+/*
+
+
+*/
+  </script>
+</body>
+</html>

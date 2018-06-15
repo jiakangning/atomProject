@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数的形参和实参</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+在函数内部，有两个特殊的对象：arguments 和 this。其中，arguments 是一个类数组对象，
+包含着传入函数中的所有参数。虽然 arguments 的主要用途是保存函数参数，
+但这个对象还有一个名叫 callee 的属性，该属性是一个指针，指向拥有这个 arguments 对象的函数。
+请看下面这个非常经典的阶乘函数。
+  */
+  function factorial(num) {
+    if (num <= 1) {
+      return 1;
+    }
+    else {
+      return num * factorial(num-1);
+    }
+  }
+  var result = factorial(6);
+console.log(result); // 6!
+
+  </script>
+</body>
+</html>

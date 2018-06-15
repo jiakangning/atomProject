@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>事件捕获</title>
+</head>
+<body>
+  <div id="myDiv">Click Me</div>
+</body>
+
+
+<script type="text/javascript">
+  // document => html => body => div
+  /*
+也就是说，click 事件首先在 <div> 元素上发生，而这个元素就是我们单击的元素。
+然后，click 事件沿 DOM 树向上传播，在每一级节点上都会发生，直至传播到 document 对象。
+  */
+</script>
+</html>

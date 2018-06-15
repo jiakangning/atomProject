@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>对象的链式写法</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var obj = {
+      name:'Carrot',
+      'for':'Max',
+      details: {
+        color:'orange',
+        size:12
+      }
+    }
+    //对象的属性链式写法
+    console.log(obj.details.color);
+    console.log(obj.details.size);
+    console.log(obj['details']['size']);
+  </script>
+</body>
+</html>

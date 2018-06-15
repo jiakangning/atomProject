@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>进阶 统计数组 arr 中值等于 item 的元素出现的次数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function countTime(arr, item) {
+var res;
+return (res = arr.toString().match(new RegExp("//b"+item+"//b","g")))?res.length:0;
+}
+let arr = ['fjkgn','item','fjdkl','item','dfdjkf','fjkfe','item'];
+// let new_arr = arr.toString();
+console.log(countTime(arr,'item'));
+    </script>
+  </body>
+</html>

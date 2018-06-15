@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>阻止事件的默认行为</title>
+</head>
+<body>
+  <input type="button" value="Click Me" id="btn"/>
+</body>
+
+<a href="http://www.baidu.com" id="link">百度一下</a>
+
+<script type="text/javascript">
+/*
+在事件处理程序内部，对象 this 始终等于 currentTarget 的值，而 target 则只包含事件的实际目标。
+如果直接将事件处理程序指定给了目标元素，则 this、currentTarget 和 target 包含相同的值。来看下面的例子。
+
+*/
+var link = document.getElementById('link');
+link.onclick = function (ev){
+  ev.preventDefault(); //ie不起作用
+  ev.stopPropagation(); //ie 不起作用
+}
+document.onclick = function (){
+  console.log('document is clicked!'); // stopPropagation() 方法用于立即停止事件在 DOM 层次中的传播，即取消进一步的事件捕获或冒泡。
+  // 例如，直接添加到一个按钮的事件处理程序可以调用 stopPropagation()，从而避免触发注册在 document.body 上面的事件处理程序，如下面的例子所示。
+}
+</script>
+</html>

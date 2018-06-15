@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function f1(){
+        console.time('time span');
+      }
+      function f2(){
+        console.timeEnd('time span');
+      }
+      setTimeout(f1,100);
+      setTimeout(f2,200);
+      function wait(n){
+        var now = Date.now();
+        while (Date.now - now < n) {
+          console.log('time is less-than 500Ms!');
+        }
+      }
+      wait(500);
+    </script>
+  </body>
+</html>

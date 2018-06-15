@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数的属性和方法 --prototype</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+对于 JavaScript 中的引用类型而言，prototype 是保存它们所有实例方法的真正所在。换句话说，
+诸如 toString() 和 valueOf() 等方法实际上都保存在 prototype 名下，只不过是通过各自对象的实例访问罢了。
+在创建自定义引用类型以及实现继承时，prototype 属性的作用是极为重要的。
+在 ECMAScript 5 中，prototype 属性是不可枚举的，因此使用 for-in 无法发现。
+  */
+  function sayHello() {
+    alert('sayHello')
+  }
+  function sayHelloTo(you) {
+    alert('sayHello' + you)
+  }
+  function sayHelloToYou(you,us) {
+    alert(you+'sayHello'+us)
+  }
+  console.log(sayHello.length);
+  console.log(sayHelloTo.length);
+  console.log(sayHelloToYou.length);
+
+
+
+  //在严格模式下，访问 arguments.callee属性，或为函数的 caller 属性赋值，都会导致错误。
+/*
+在此，变量 trueFactorial 获得了 factorial 的值，实际上是在另一个位置上保存了一个函数的指针。
+然后，我们又将一个简单地返回 0 的函数赋值给 factorial 变量。
+如果像原来的 factorial() 那样不使用 arguments.callee，调用 trueFactorial() 就会返回 0。
+可是，在解除了函数体内的代码与函数名的耦合状态之后，
+trueFactorial() 仍然能够正常地计算阶乘；至于 factorial()，它现在只是一个返回 0 的函数。
+*/
+  </script>
+</body>
+</html>

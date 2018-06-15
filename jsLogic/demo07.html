@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>求质数的个数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+      质数：就是只能被1和自己整除。
+      翻译过来：它的因数个数是2。
+      比如：2、3、5、7、11、13、17、19、23、29、31、37……
+      用户输入一个数字，弹出这个数字是否是质数。
+      质数（prime number）又称素数，有无限个。
+      质数定义为在大于1的自然数中，除了1和它本身以外不再有其他因数。
+      0，1既不是质数也不是合数。
+      还可以说成质数只有1和它本身两个约数。
+      合数是整数中除了1和它本身还能被其他的整数整除的整数.
+      */
+      var inp=document.createElement('input');
+      document.body.appendChild(inp);
+      inp.onblur=function(){
+        var val = parseInt(inp.value);
+        var arr=[];
+        for (var i = 0; i < val; i++) {
+          if (val%i==0) {
+            arr.push(i);
+          }
+        }
+        if (arr.length==1) {
+          alert('这个数是质数！')
+        }
+        else if (val==1 || val==0) {
+          alert('这个数既是质数，也是合数！')
+        }
+        else {
+          alert('这个数是合数！')
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>节点层次</title>
+</head>
+<body>
+  <!--
+DOM 可以将任何 HTML 或 XML 文档描绘成一个由多层节点构成的结构。
+节点分为几种不同的类型，每种类型分别表示文档中不同的信息及（或）标记。
+每个节点都拥有各自的特点、数据和方法，另外也与其他节点存在某种关系。
+节点之间的关系构成了层次，而所有页面标记则表现为一个以特定节点为根节点的树形结构。
+以下面的 HTML 为例：
+ -->
+<div class="" id="test">
+
+</div>
+ <script type="text/javascript">
+   var test = document.getElementById('test');
+   if (test.nodeType == Node.ELEMENT_NODE) {
+     console.log('test is a Element!');
+   }
+ </script>
+</body>
+</html>

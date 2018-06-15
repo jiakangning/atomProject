@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>原型对象的问题</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function Person(){}
+
+    Person.prototype = {
+      constructor : Person,
+      name:'Json',
+      age : 25,
+      sex : 'men',
+      friends : ['zhangsan','lisi'],
+      sayName : function (){
+        console.log(this.name);
+      }
+    }
+    var p1 = new Person();
+    var p2 = new Person();
+    p1.friends.push('wangwu');
+    console.log(p1.friends);//zhangsan lisi wagnwu
+    console.log(p2.friends);//zhangdan lisi wangwu
+    console.log(p1.constructor == Person); //true
+    console.log(new Person().friends); //zhangdan lisi wangwu
+  </script>
+</body>
+</html>

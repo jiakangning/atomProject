@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>js单线程</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var start = new Date();
+      setTimeout(function (){
+        var end = new Date();
+        console.log('time elapsed:',end - start,'ms');
+      },500)
+      while (new Date - start <= 1000) {
+        console.log('时间间隔小于1000ms！');
+      }
+    </script>
+  </body>
+</html>

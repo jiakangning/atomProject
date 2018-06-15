@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>6、下面两个函数的返回值是一样的吗？为什么？</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function foo1(){
+        return {
+          bar:'hello'
+        };
+      }
+      function foo2(){
+        return
+        {
+          bar:'hello'
+        };
+      }
+      console.log(foo1());
+
+      //在编程语言中，基本都是使用分号（;）将语句分隔开，这可以增加代码的可读性和整洁性。
+      //而在JS中，如若语句各占独立一行，通常可以省略语句间的分号（;），
+      //JS 解析器会根据能否正常编译来决定是否自动填充分号：
+      /*
+      function foo2()
+      {
+       return;
+       {
+       bar: "hello"
+       };
+      }
+      */
+    </script>
+  </body>
+</html>

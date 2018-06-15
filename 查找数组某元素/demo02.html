@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>查找数组某元素(干掉for)</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function find (x,y,i=0){
+      if (i >= x.length) return null;
+      if (x[i] == y) return i;
+      return find(x,y,i+1);
+    }
+    var arr = [12,1.4,4156,1,54,15,5,1,5,1,6,51,1];
+    console.log(find(arr,54));
+  </script>
+</body>
+</html>

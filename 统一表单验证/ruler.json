@@ -1,0 +1,17 @@
+var data={
+  {
+    value:username,
+    isEmpty:'用户名不能为空'
+  },
+  {
+    value:password,
+    isEmpty:'密码不能为空',
+    minLength:'密码长度不小于6位&6',
+    maxLength:'密码长度最大12位&12'
+  },
+  {
+    value:phone,
+    isEmpty:'手机号不能为空',
+    isMobile:'手机号不正确'
+  }
+}

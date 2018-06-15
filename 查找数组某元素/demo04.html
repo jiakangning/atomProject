@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>高阶函数</title>
+</head>
+<body>
+  <script type="text/javascript">
+    const find = (highfunc => highfunc(highfunc))(func => (x,y,i=0) => i >= x.length ? null : x[i] == y ? i : func(func) (x,y,i+1));
+    const arr = [1,3,54,65,6,7,85,67,4,4];
+    console.log(find(arr,65));
+  </script>
+</body>
+</html>

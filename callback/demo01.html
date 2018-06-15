@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title</title>
+  </head>
+  <body>
+    <div class="" id="div1">
+
+    </div>
+    <script type="text/javascript">
+      function a(callback){
+        div1.innerHTML += 'a';
+        callback();
+      }
+      function b(){
+        div1.innerHTML += 'b';
+      }
+      var div1;
+      window.onload=function (){
+         div1 =  document.getElementById('div1');
+        setTimeout('a(b)',3000);
+      }
+    </script>
+  </body>
+</html>

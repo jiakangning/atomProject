@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>缩小方法--reduce</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+ECMAScript 5 还新增了两个缩小数组的方法：reduce() 和 reduceRight()。
+这两个方法都会迭代数组的所有项，然后构建一个最终返回的值。
+其中，reduce() 方法从数组的第一项开始，逐个遍历到最后。而 reduceRight() 则从数组的最后一项开始，向前遍历到第一项。
+*/
+var numbers = [0,1,2,3,6,8,5];
+var sum =  numbers.reduce(function(prev,cur,index,array){
+   // 第一次执行回调函数，prev是1，cur是2。第二次，prev是3（1加2的结果），
+   // cur是3（数组的第三项）。这个过程会持续到把数组中的每一项都访问一遍，最后返回结果。
+    return prev + cur;
+});
+console.log(numbers); //[] => Array(7)
+console.log(sum); //数组之和
+
+  </script>
+</body>
+</html>

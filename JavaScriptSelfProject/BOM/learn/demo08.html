@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>location  对象--位置操作符</title>
+</head>
+<body>
+  <button id="btn" onclick="">百度一下</button>
+  <script type="text/javascript">
+  /*
+使用 location 对象可以通过很多方式来改变浏览器的位置。
+首先，也是最常用的方式，就是使用 assign()方法并为其传递一个 URL，如下所示。
+*/
+// 假设初始 URL 为 http://shijiajie.com/about/
+location.href = "http://shijiajie.com/about/"
+
+// 将 URL 修改为 "http://shijiajie.com/about/#ds-thread"
+location.hash = "#ds-thread";
+
+// 将 URL 修改为 "http://shijiajie.com/about/?args=123"
+location.search = "?args=123";
+
+// 将 URL 修改为 "https://segmentfault.com/"
+location.hostname = "segmentfault.com";
+
+// 将 URL 修改为 "http://segmentfault.com/u/stone0090/"
+location.pathname = "u/stone0090";
+
+// 将 URL 修改为 "https://segmentfault.com:8080/"
+location.port = 8080;
+  </script>
+</body>
+</html>

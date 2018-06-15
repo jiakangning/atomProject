@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>sync</title>
+  </head>
+  <body>
+    <input type="button" name="" value="click" id="btn">
+    <script type="text/javascript">
+     var btn = document.querySelector('#btn');
+      console.log("sync");
+     btn.addEventListener('click',function (){
+       setTimeout(function (){
+         console.log('you clicked the button!');
+       },2000);
+     });
+     setTimeout(function (){
+       console.log('Click the button');
+     },5000);
+    </script>
+  </body>
+</html>

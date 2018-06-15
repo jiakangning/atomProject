@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Set和Map都可以用来生成新的 Map</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const set = new Set([
+        ['brand','huawei'],
+        ['property','superior']
+      ]);
+      const map1 = new Map(set);
+      console.log(map1.has('brand'));
+      const map2 = new Map([['hobby','swimming']]);
+      console.log(map2.get('hobby'));
+      const map3 = new Map(map2);
+      console.log(map3.get("hobby"));
+      const map4 = new Map(map3);
+      console.log(map4.has("hobby"));
+    </script>
+  </body>
+</html>

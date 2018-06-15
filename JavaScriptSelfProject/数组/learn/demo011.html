@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>稀疏数组</title>
+</head>
+<body>
+  <script type="text/javascript">
+  var a1 = [,2,,3];
+  console.log(a1);//[empty, 2, empty, 3]
+  var a2 = [];
+  a2.length = 1000;
+  console.log(a2);//(1000) [empty × 1000]
+  console.log(0 in a1);//false
+  </script>
+</body>
+</html>

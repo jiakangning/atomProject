@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>q2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 不使用中间变量，交换a = 'boolean', b = [0,1] 两个变量的值。
+      var a = 'boolean',
+          b = [0,1];
+      function exchange(){
+         a = [a,b];
+         b = a[0];
+         a = a[1];
+         console.log(a+'和'+b);
+      }
+      exchange();
+    </script>
+  </body>
+</html>

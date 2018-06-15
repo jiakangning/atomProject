@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组方法</title>
+</head>
+<body>
+  <script type="text/javascript">
+    //js中通过Object.prototype.toString方法
+    //所有对象都具有 toLocaleString()、toString() 和 valueOf() 方法。其中，
+    //调用数组的 toString() 和 toLocaleString() 方法会返回相同的值，
+    //即由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串。
+    //实际上，为了创建这个字符串会调用数组每一项的 toString() 方法。例如：
+    var color = ['red','green','blue'];
+    console.log(color.toString());//red,green,blue
+    console.log(color.toLocaleString());//red,green,blue
+    console.log(color.valueOf());//(3) ["red", "green", "blue"]
+    console.log(color);//(3) ["red", "green", "blue"]
+  </script>
+</body>
+</html>

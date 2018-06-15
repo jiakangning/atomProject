@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>或操作符</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+      l 如果第一个操作数是 boolean 类型，而且值为 true， 那么，直接返回 true。
+      l 如果第一个操作数是 Boolean 类型，而且值为 false ，第二个操作数为 object，那么返回 object 对象。
+      l 如果两个操作数都是 object 类型，那么返回第一个对象。
+      l 如果两个操作数都是 null，那么，返回 null。
+      l 如果两个操作数都是 NaN，那么返回 NaN。
+      l 如果两个操作数都是 undefined，那么，返回 undefined。
+      */
+alert(false || alice);         // alice
+alert(true || alice);          // true
+alert(alice || smith);         // alice
+alert(smith || alice);         // smith
+alert(null || alice);       // alice
+alert(alice || null);       // alice
+alert(null || null);        // null
+alert(NaN || alice);        // alice
+alert(alice || NaN);        // alice
+alert(NaN || NaN);          // NaN
+alert(undefined || alice);     // alice
+alert(alice || undefined);     // alice
+alert(undefined || undefined); // undefined
+/*
+
+*/
+    </script>
+  </body>
+</html>

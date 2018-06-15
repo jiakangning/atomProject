@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>for in 语句</title>
+</head>
+<body>
+  <script type="text/javascript">
+  for (var variable in window) {
+    console.log(variable);//window 对象的所有属性
+  }
+  /*
+在这个例子中，我们使用 for-in 循环来显示了 BOM 中 window 对象的所有属性。
+每次执行循环时，都会将 window 对象中存在的一个属性名赋值给变量 propName。
+这个过程会一直持续到对象中的所有属性都被枚举一遍为止。与 for 语句类似，
+这里控制语句中的 var 操作符也不是必需的。但是，为了保证使用局部变量，我们推荐上面例子中的这种做法。
+  */
+  </script>
+</body>
+</html>

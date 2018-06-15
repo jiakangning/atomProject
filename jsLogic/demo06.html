@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>用户输入一个数，输出因数的个数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+      昨天晚上的作业3，就是用户输入一个数，输出所偶数能够整除它的数字。
+      比如，
+      用户输入48，此时输出1、2、3、4、6、8、12、16、24、48 。  共10个数字。
+      用户输入21，此时输出1、3、7、21.共4个数字。
+      今天的这道题目，和昨天的这个题目非常像，不过不输出完成序列，只输出个数。
+      也就是说，用户输入48，弹出10。
+      用户输入21，弹出4
+      用户输入11，弹出2
+      */
+      var inp=document.createElement('input');
+      document.body.appendChild(inp);
+      inp.onblur=function(){
+        var val=inp.value;
+        var arr=[];
+        for (var i = 0; i < val; i++) {
+          if (i%2==0) {
+            arr.push(i)
+          }
+        }
+        console.log(arr.length);
+      }
+    </script>
+  </body>
+</html>

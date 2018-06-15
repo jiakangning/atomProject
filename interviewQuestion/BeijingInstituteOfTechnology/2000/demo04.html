@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    姓名<input type="text" name="" value="" id="name">
+    年龄<input type="text" name="" value="" id="age">
+    成绩<input type="text" name="" value="" id="score">
+    <input type="button" name="" value="合成" id="btn">
+    <table id="table">
+
+    </table>
+    <script type="text/javascript">
+      /*
+ 从键盘输入4个学生的数据(包括姓名、年龄和成绩)，
+ 并存放在文件sf1上。从该文件读出这些数据，
+ 按成绩从高到底排序，并输出其中成绩次高者的所有数据。
+      */
+      var name = document.getElementById('name').value;
+      var age = document.getElementById('age').value;
+      var score = document.getElementById('score').value;
+      var btn = document.getElementById('btn');
+      btn.onclick=function(){
+        if (isNull(name)&&isNull(age)&&isNull(score)) {
+          alert('success!!')
+        }
+        else {
+          alert('fail')
+        }
+      }
+      function isNull(val){
+        //1.去除空格
+         var str = val.replace(/(^\s*)|(\s*$)/g,'');
+        //2.判断
+        if(str == '' || str == undefined || str == null){
+          return false;
+        }
+        else {
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>

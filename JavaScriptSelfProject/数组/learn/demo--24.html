@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>迭代方法--forEach--迭代</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+ECMAScript 5 为数组定义了5个迭代方法。每个方法都接收两个参数：
+要在每一项上运行的函数和（可选的）运行该函数的作用域对象。
+传入这些方法中的函数会接收三个参数：数组项的值、该项在数组中的位置和数组对象本身。
+根据使用的方法不同，这个函数执行后的返回值可能会也可能不会影响访问的返回值。以下是这5个迭代方法的作用。
+对数组中的每一项运行给定函数。这个方法没有返回值。
+*/
+var numbers = [0,1,2,3,6,8,5];
+ numbers.forEach(function(item, index, array){
+    if (item == index) {
+      array.splice(index,1,666);
+    }
+    else {
+      array.splice(index,1,888);
+    }
+});
+console.log(numbers); //[] => Array(7)
+// 0
+// :
+// 666
+// 1
+// :
+// 666
+// 2
+// :
+// 666
+// 3
+// :
+// 666
+// 4
+// :
+// 888
+// 5
+// :
+// 888
+// 6
+// :
+// 888
+
+  </script>
+</body>
+</html>

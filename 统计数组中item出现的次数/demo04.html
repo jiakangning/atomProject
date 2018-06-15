@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>demo</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    console.time();
+      function count(arr,item) {
+        // var reg2 = /\bitem\b/g;
+        var reg = new RegExp('\b'+item+'\b','g');
+        // var reg = /4\b/g;
+        console.log(reg);
+        // console.log(typeof reg);
+        var res=arr.toString().match(reg);
+        console.log(res);
+        if (res) {
+          console.log('res is object!');
+        }
+      // return  res ? res.length:0;
+              // (res = arr.toString().match(new RegExp("//b"+item+"//b","g")))?res.length:0;
+      }
+    count([12,15,6,5,4,684,984,984,65,46,498,4],4);
+      // console.timeEnd(); //default: 2.498779296875ms
+    </script>
+  </body>
+</html>

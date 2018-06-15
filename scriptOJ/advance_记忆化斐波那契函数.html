@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>进阶记忆化斐波那契函数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const fibonacci((memory = {})=>n=>{
+        if(n<2) return n
+        if(memory[n-2] === undefined){
+          memory[n-2] = fibonacci(n-2)
+        }
+        if(memory[n-1] === undefined){
+          memory[n-1] = fibonacci(n-1)
+        }
+        return memory[n] = memory[n-1]+memory[n-2]
+      })()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>为数组 arr 中的每个元素求二次方。不要直接修改数组 arr，结果返回新的数组</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function involution(arr){
+        var new_arr  = arr.slice(0);//复制一个arr数组
+        /*
+        start	可选。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。
+        也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。
+
+        end	可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。
+        如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。
+        如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。
+        */
+        for(var i=0;i<arr.length;i++)
+        {
+          new_arr[i] *= new_arr[i];
+        }
+        console.log(new_arr);
+      }
+      let arr = [10,25,3,6,5,2,4,1,5];
+    involution(arr);
+    </script>
+  </body>
+</html>

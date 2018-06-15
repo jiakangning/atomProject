@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>跨浏览器的时间对象</title>
+</head>
+<body>
+  <input type="button" value="Click Me" id="myBtn"/>
+</body>
+
+<a href="http://www.baidu.com" id="link">百度一下</a>
+
+<script type="text/javascript">
+/*
+虽然 DOM 和 IE 中的 event 对象不同，但基于它们之间的相似性依旧可以拿出跨浏览器的方案来。
+IE中 event 对象的全部信息和方法 DOM 对象中都有，只不过实现方式不一样。
+不过，这种对应关系让实现两种事件模型之间的映射非常容易。
+可以对前面介绍的 EventUtil 对象加以增强，添加如下方法以求同存异。
+
+*/
+var EventUtil = {
+    addHandler: function(element, type, handler){
+        // 省略的代码
+    },
+    getEvent: function(event){
+        return event ? event : window.event;
+    },
+    getTarget: function(event){
+        return event.target || event.srcElement;
+    },
+    preventDefault: function(event){
+        if (event.preventDefault){
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+    },
+    removeHandler: function(element, type, handler){
+        // 省略的代码
+    },
+    stopPropagation: function(event){
+        if (event.stopPropagation){
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
+        }
+    }
+};
+</script>
+</html>

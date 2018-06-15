@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>一、减少HTTP请求</title>
+    <style media="screen">
+      /*
+introuduce:case:
+假设导航栏上有五幅图片，点击每张图片都会进入一个链接，
+这样五张导航的图片在加载时会产生5个HTTP请求。
+然而，使用一个图片地图可以提高效率，这样就只需要一个HTTP请求。
+resolve case:
+服务器端图片地图：将所有点击提交到同一个url，同时提交用户点击的x、y坐标，服务器端根据坐标映射响应
+客户端图片地图：直接将点击映射到操作
+       */
+
+/*
+CSS Sprites
+CSS Sprites直译过来就是CSS精灵，但是这种翻译显然是不够的，
+其实就是通过将多个图片融合到一副图里面，然后通过CSS的一些技术布局到网页上。
+特别是图片特别多的网站，如果能用css sprites降低图片数量，带来的将是速度的提升。
+
+
+
+<div>
+    <span id="image1" class="nav"></span>
+    <span id="image2" class="nav"></span>
+    <span id="image3" class="nav"></span>
+    <span id="image4" class="nav"></span>
+    <span id="image5" class="nav"></span>
+</div>
+.nav {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border: 1px solid #000;
+    background-image: url('E:/1.png');
+}
+#image1 {
+        background-position: 0 0;
+}
+#image2 {
+        background-position: -95px 0;
+}
+#image3 {
+        background-position: -185px 0;
+}
+#image4 {
+        background-position: -275px 0;
+}
+#image5 {
+        background-position: -366px -3px;
+}
+ */
+    </style>
+  </head>
+  <body>
+
+  </body>
+</html>

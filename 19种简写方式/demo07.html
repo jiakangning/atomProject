@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>箭头函数简写</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // function
+// sayHello(name) {
+// console.log(
+// 'Hello'
+// , name);
+// }
+// sayHello('XingYa')
+// setTimeout(
+// function
+// () {
+// console.log(
+// 'Loaded'
+// )
+// },
+// 2000
+// );
+var list = [12,16,10,5,6,30,22];
+// list.forEach(
+// function
+// (item) {
+// console.log(item);
+// });
+let sayHello = name => console.log('Hello',name);
+sayHello('XingYa');
+setTimeout(() => console.log('Loaded!'),200);
+list.forEach((item) => console.log(item));
+    </script>
+  </body>
+</html>

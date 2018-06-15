@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>字符串的//比较</title>
+</head>
+<body>
+  <script type="text/javascript">
+  // 比较两个字符串，比较是规则是按照字母表顺序比较的
+  var mystr = 'chicken';
+  var mystrTwo = 'egg';
+  var mystrThree = 'fly';
+  var first = mystr.localeCompare(mystrTwo); //-1表示小于
+   first = mystr.localeCompare(mystrThree); //-1表示小于
+   first = mystr.localeCompare('chicken'); //0表示等于
+   first = mystrThree.localeCompare(mystrTwo); //1表示大于
+  console.log(first);
+  </script>
+</body>
+</html>

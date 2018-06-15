@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Element 类型</title>
+</head>
+<body>
+  <div id="mydiv"></div>
+  <script type="text/javascript">
+    var div =document.getElementById('mydiv');
+    console.log(div.tagName);//DIV
+    console.log(div.nodeName);//DIV
+    console.log(div.tagName === div.nodeName);//true
+    /*
+这里的元素标签名是 div，它拥有一个值为 "myDiv" 的ID。
+可是，div.tagName 实际上输出的是 "DIV" 而非 "div"。在HTML中，标签名始终都以全部大写表示；
+而在 XML（有时候也包括 XHTML）中，标签名则始终会与源代码中的保持一致。
+假如你不确定自己的脚本将会在 HTML 还是 XML 文档中执行，
+最好是在比较之前将标签名转换为相同的大小写形式，如下面的例子所示：
+    */
+
+    // 不能这样比较，很容易出错！
+if (element.tagName == "div"){
+    //在此执行某些操作
+}
+
+// 这样最好（适用于任何文档）
+if (element.tagName.toLowerCase() == "div"){
+    //在此执行某些操作
+}
+  </script>
+</body>
+</html>

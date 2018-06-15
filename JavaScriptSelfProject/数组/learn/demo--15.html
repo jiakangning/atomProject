@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>操作方法</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+
+JavaScript 为操作已经包含在数组中的元素提供了很多方法。
+其中，concat() 方法可以基于当前数组中的所有项创建一个新数组。
+具体来说，这个方法会先创建当前数组一个副本，然后将接收到的参数添加到这个副本的末尾，
+最后返回新构建的数组。
+在没有给 concat() 方法传递参数的情况下，它只是复制当前数组并返回副本。
+如果传递给 concat() 方法的是一或多个数组，则该方法会将这些数组中的每一项都添加到结果数组中。
+如果传递的值不是数组，这些值就会被简单地添加到结果数组的末尾。例如：
+    */
+var colors = ['red','green','blue'];
+var colors2 = colors.concat('yellow',['black'],'drown');
+console.log(colors);//保值不变
+console.log(colors2);//吧yellow和black，drown君添加到一个新数组中
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>队列方法</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+队列是一种 FIFO（First-In-First-Out，先进先出）的数据结构，队列在列表的末端添加项，
+从列表的前端移除项。shift() 方法则从数组前端移除第一项，减少数组的 length 值，
+然后返回移除的项。结合 push() 和 shift() 方法，就可以像队列一样使用数组。例如：：
+    */
+    var color = ['red','green','blue'];
+    var count = color.push('yellow','prink');//返回数组的长度
+    console.log(count);
+    count = color.push('black','white');
+    console.log(count);
+    console.log(color);
+    var item = color.shift();
+    console.log(item); //red 头部
+  //
+  //JavaScipt 还为数组提供了一个 unshift() 方法。
+  //顾名思义，unshift() 与 shift() 的用途相反，
+  //它能在数组前端添加任意个项并返回新数组的长度。因此，
+  //同时使用 unshift() 和 pop() 方法，可以从相反的方向来模拟队列，即在数组的前端添加项，从数组末端移除项。
+  </script>
+</body>
+</html>

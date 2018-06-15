@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>new 操作符</title>
+</head>
+<body>
+  <script type="text/javascript">
+  function Person(name, age, job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.sayName = new Function("console.log(this.name)"); // 与声明函数在逻辑上是等价的
+}
+  </script>
+</body>
+</html>

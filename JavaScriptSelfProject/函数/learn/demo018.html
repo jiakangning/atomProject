@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>扩充函数作用域 --call和aplly</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+在使用 call() 方法的情况下，callSum() 必须明确地传入每一个参数。
+结果与使用 apply() 没有什么不同。至于是使用 apply() 还是 call()，完全取决于你采取哪种给函数传递参数的方式最方便。
+如果你打算直接传入 arguments 对象，或者包含函数中先接收到的也是一个数组，那么使用 apply() 肯定更方便；
+否则，选择 call() 可能更合适。（在不给函数传递参数的情况下，使用哪个方法都无所谓。）
+ 事实上，传递参数并非 apply() 和 call() 真正的用武之地；
+它们真正强大的地方是能够扩充函数赖以运行的作用域。下面来看一个例子。
+  */
+  window.color = 'red';
+  var o = {
+    color:'green'
+  };
+  function sayColor() {
+    console.log(this.color);
+  }
+sayColor();//red
+sayColor.call(this);//red
+sayColor.call(window);//red
+sayColor.call(o);//red
+
+  //在严格模式下，访问 arguments.callee属性，或为函数的 caller 属性赋值，都会导致错误。
+/*
+这个例子是在前面说明 this 对象的示例基础上修改而成的。这一次，sayColor() 也是作为全局函数定义的，
+而且当在全局作用域中调用它时，它确实会显示 "red"，
+因为对 this.color 的求值会转换成对 window.color 的求值。而 sayColor.call(this) 和 sayColor.call(window)，
+则是两种显式地在全局作用域中调用函数的方式，结果当然都会显示 "red"。但是，当运行 sayColor.call(o) 时，
+函数的执行环境就不一样了，因为此时函数体内的 this 对象指向了 o，于是结果显示的是 "blue"。
+
+使用 call() 或 apply() 来扩充作用域的最大好处，就是对象不需要与方法有任何耦合关系。
+在前面例子的第一个版本中，我们是先将 sayColor() 函数放到了对象 o 中，然后再通过 o 来调用它的；
+而在这里重写的例子中，就不需要先前那个多余的步骤了。。
+*/
+  </script>
+</body>
+</html>

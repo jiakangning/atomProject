@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>URI 编码方法</title>
+</head>
+<body>
+  <!-- ECMA-262 对内置对象的定义是「由 JavaScript 实现提供的、不依赖于宿主环境的对象，这些对象在 JavaScript 程序执行之前就已经存在了」。意思就是说，开发人员不必显式地实例化内置对象，因为它们已经实例化了。前面我们已经介绍了大多数内置对象，例如 Object、Array 和 String。ECMA-262 还定义了两个单体内置对象：Global 和 Math。 -->
+  <script type="text/javascript">
+    // 不需要实例化，一个是global，另一个是math
+    /*
+
+Global 对象的 encodeURI() 和 encodeURIComponent() 方法可以对 URI（Uniform Resource Identifiers，
+通用资源标识符）进行编码，以便发送给浏览器。有效的 URI 中不能包含某些字符，例如空格。
+而这两个 URI 编码方法就可以对 URI 进行编码，
+它们用特殊的 UTF-8 编码替换所有无效的字符，从而让浏览器能够接受和理解。
+    */
+    var uri = 'http://shijiajie.com/illegal value.htm#start';
+    console.log(uri);//http://shijiajie.com/illegal value.htm#start
+    console.log(encodeURI(uri));//http://shijiajie.com/illegal%20value.htm#start
+    console.log(encodeURIComponent(uri));//http%3A%2F%2Fshijiajie.com%2Fillegal%20value.htm%23start
+
+    /*
+其中，encodeURI() 主要用于整个 URI，
+而 encodeURIComponent() 主要用于对 URI 中的某一段进行编码。
+它们的主要区别在于，
+encodeURI() 不会对本身属于 URI 的特殊字符进行编码，例如冒号、正斜杠、问号和井字号；
+而 encodeURIComponent() 则会对它发现的任何非标准字符进行编码。
+来看下面的例子。
+
+这里，变量 uri 包含着一个由 encodeURIComponent() 编码的字符串。
+在第一次调用 decodeURI() 输出的结果中，只有 %20 被替换成了空格。
+而在第二次调用 decodeURIComponent() 输出的结果中，所有特殊字符的编码都被替换成了原来的字符，
+得到了一个未经转义的字符串（但这个字符串并不是一个有效的 URI）。
+    */
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HTML DOM 定义了访问和操作HTML文档的标准方法</title>
+  </head>
+  <body>
+    <img src="" alt="demo">
+    <img src="" alt="demo">
+    <img src="" alt="demo">
+    <img src="" alt="demo">
+    <img src="" alt="demo">
+    <script type="text/javascript">
+      /*
+      all
+      forms
+      images
+      links
+      body     获取页面的Body
+      */
+      // 获取dom 树, 获取document 对象.
+      var dom = window.document;
+      function gain_dom_all(){
+        var image_arr = dom.images;
+        for (var i = 0; i < image_arr.length; i++) {
+          console.log(image_arr[i]);
+        }
+      }
+      gain_dom_all();
+    </script>
+  </body>
+</html>

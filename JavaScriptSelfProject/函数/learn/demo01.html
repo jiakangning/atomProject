@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数</title>
+</head>
+<body>
+  <script type="text/javascript">
+    //写法一
+    function sum(num1,num2) {
+      return num1 + num2;
+    }
+    //写法二
+    var sum = function (num1,num2) {
+      return num1 + num2;
+    };
+    //写法三
+    var sum = new Function ('num1','num2','return num1 + num2');
+    //由于函数名仅仅是指向函数的指针，因此函数名与包含对象指针的其他变量没有什么不同。换句话说，一个函数可能会有多个名字。
+  </script>
+</body>
+</html>

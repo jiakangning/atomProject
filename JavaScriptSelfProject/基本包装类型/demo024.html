@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>基本包装类型 --String 类型--字符串操作方法 -- fromCharCode()</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+另外，String 构造函数本身还有一个静态方法：fromCharCode()。
+这个方法的任务是接收一或多个字符编码，然后将它们转换成一个字符串。
+从本质上来看，这个方法与实例方法 charCodeAt() 执行的是相反的操作。来看一个例子
+  */
+  var s = 'hello';
+  for(let i=0;i<s.length;i++){
+    console.log(`${s[i]}----${s[i].charCodeAt()}`);
+  }
+  </script>
+</body>
+</html>

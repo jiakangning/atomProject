@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>002</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      (function (){
+        var a = b = 3;
+      })()
+      var temp = typeof a;//返回的是字符串
+      console.log(temp =='undefined');
+      // console.log(temp != undefined);
+      console.log(typeof b == 'number');
+    </script>
+  </body>
+</html>

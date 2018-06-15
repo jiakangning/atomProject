@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>浅拷贝实现方式</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function showClone(){
+        if(!source || typeof source != 'object'){
+          throw new Error('error');
+        }
+        var targetObj = source.constructor == Array?[]:{};
+        for(var keys in source){
+          if(source.hasOwnProperty(keys)){
+            targetObj[keys] = source[keys];
+          }
+        }
+        return targetObj;
+      }
+      showClone();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>官咖一</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /*
+* 把 p 中的可枚举属性复制到 o 中，并返回 o
+* 如果 o 和 p 中含有同名属性，则覆盖 o 中的属性
+*/
+function extend(o, p) {
+  for (var variable in p) {
+      o[variable] =  p[variable];
+  }
+  return o;
+}
+var x = {
+name:'xxx'
+};
+var y = {
+  name:'sss',
+  age:25,
+  mathScore:75,
+  sportScore:65
+}
+console.log(extend(x,y));
+</script>
+</body>
+</html>

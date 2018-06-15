@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>基本包装类型 --Number 类型</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+这里给 toFixed() 方法传入了数值 2，意思是显示几位小数。于是，这个方法返回了 "10.00"，即以 0 填补了必要的小数位。
+如果数值本身包含的小数位比指定的还多，那么接近指定的最大小数位的值就会舍入，如下面的例子所示。
+*/
+var num = 10;
+console.log(num.toExponential(1));//1.0e+1
+
+
+
+/*
+另外可用于格式化数值的方法是 toExponential()，该方法返回以指数表示法（也称 e 表示法）表示的数值的字符串形式。
+与 toFixed() 一样，toExponential() 也接收一个参数，而且该参数同样也是指定输出结果中的小数位数。看下面的例子。
+*/
+  </script>
+</body>
+</html>

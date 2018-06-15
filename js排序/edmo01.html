@@ -1,0 +1,35 @@
+<!-- 1、比较相邻元素，如果第一个比第二个大，就交换他们
+2、对每一对相邻元素做同样工作，从开始的第一对到最后一对，这样在最后的元素应该是最大的数
+3、针对所有元素重复以上的步骤，除了最后一个
+4、重复1到3步骤，直到排序完成 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>冒泡排序</title>
+  </head>
+  <body>
+    <pre>
+          重复的走访过要排序的数列，一次比较俩个元素，把大的和小的进行比较，大的放后面，
+          小的冒泡到前面，走访数列的工作就是重复进行直到没有在需要进行交换的元素，此时数列排序完成
+    </pre>
+    <script type="text/javascript">
+      var arr=[11,22,65,8,89,77,42];
+      var temp;
+      for(var i=0;i<arr.length;i++){
+        for(var j=0;j<arr.length-1;j++){
+          if(arr[j]>arr[j+1]){
+            temp=arr[j];
+            arr[j]=arr[j+1];
+            arr[j+1]=temp;
+            console.log('交换了');
+          }
+
+        }
+        console.log(i);
+      }
+      console.log(arr);
+
+    </script>
+  </body>
+</html>

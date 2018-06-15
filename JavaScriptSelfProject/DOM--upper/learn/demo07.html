@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>操作节点</title>
+</head>
+<body>
+  <!--
+  因为关系指针都是只读的，所以 DOM 提供了一些操作节点的方法。
+  其中，最常用的方法是 appendChild()，用于向 childNodes 列表的末尾添加一个节点。
+  添加节点后，childNodes 的新增节点、父节点及以前的最后一个子节点的关系指针都会相应地得到更新。
+  更新完成后，appendChild() 返回新增的节点。来看下面的例子：
+ -->
+<div class="" id="test">
+<input type="text" name="" value="" id="inp">
+</div>
+ <script type="text/javascript">
+ // 前面介绍的 appendChild() 和 insertBefore() 方法都只插入节点，不会移除节点。而下面要介绍的 replaceChild() 方法接受的两个参数是：要插入的节点和要替换的节点。要替换的节点将由这个方法返回并从文档树中被移除，同时由要插入的节点占据其位置。来看下面的例子。
+
+// 替换第一个子节点
+// var returnedNode = someNode.replaceChild(newNode, someNode.firstChild);
+
+// 替换最后一个子节点
+ returnedNode = someNode.replaceChild(newNode, someNode.lastChild);
+// 在使用 replaceChild() 插入一个节点时，该节点的所有关系指针都会从被它替换的节点复制过来。尽管从技术上讲，被替换的节点仍然还在文档中，但它在文档中已经没有了自己的位置。
+
+// 如果只想移除而非替换节点，可以使用 removeChild() 方法。这个方法接受一个参数，即要移除的节点。被移除的节点将成为方法的返回值，如下面的例子所示。
+
+// 移除第一个子节点
+ var formerFirstChild = someNode.removeChild(someNode.firstChild);
+
+// 移除最后一个子节点
+var formerLastChild = someNode.removeChild(someNode.lastChild);
+// 与使用 replaceChild() 方法一样，通过 removeChild() 移除的节点仍然为文档所有，只不过在文档中已经没有了自己的位置。
+
+// 前面介绍的四个方法操作的都是某个节点的子节点，也就是说，要使用这几个方法必须先取得父节点（使用 parentNode 属性）。
+// 另外，并不是所有类型的节点都有子节点，如果在不支持子节点的节点上调用了这些方法，将会导致错误发生。
+ </script>
+</body>
+</html>

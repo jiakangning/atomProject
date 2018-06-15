@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>// _.flow 改写</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    const arr = ['pen', 'apple', 'applypen'];
+    const upperAndBase64 = _.partialRight(_.map, _.flow(_.upperCase, btoa));
+    console.log(upperAndBase64(arr));
+    </script>
+  </body>
+</html>

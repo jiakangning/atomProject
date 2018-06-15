@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>长度限制</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function CheckPost(){
+        if(addForm.texter.value.length>50){
+          alert('字符串长度不能超过50');
+          addForm.texter.focus();
+          return false;
+        }
+      }
+    </script>
+    <form name="addForm" action="index.html" method="post" onsubmit="return CheckPost()">
+      <textarea name="texter" rows="8" cols="80"></textarea>
+      <input type="submit" name="sub" value="检测">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS富文本编辑器</title>
+  <style media="screen">
+
+  </style>
+</head>
+<body>
+  <div id="rich-editor" contenteditable="true">
+    <p>百度EUX团队</p>
+  </div>
+  <script type="text/javascript">
+    let selection = window.getSelection();
+    let range = selection.getRangeAt(0);
+    let textEle = range.commonAncestorContainer;
+    range.setStart(range.startContainer,textEle.length);
+    range
+    console.log(range);
+  </script>
+</body>
+</html>

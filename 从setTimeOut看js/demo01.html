@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>js单线程demo01</title>
+  </head>
+  <body>
+   <script type="text/javascript">
+     var t = true;
+     setTimeout(function (){
+       t = false;
+     },1000);
+     while (t) {
+       console.log(1);
+     }
+     alert(end);
+   </script>
+  </body>
+</html>

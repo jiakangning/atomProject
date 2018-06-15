@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>精确判断对象类型</title>
+</head>
+<body>
+  <script type="text/javascript">
+    //js中通过Object.prototype.toString方法
+    var arr = [];
+    console.log(Object.prototype.toString.call(arr));//[object Array]
+    var str = '12334';
+    console.log(Object.prototype.toString.call(str));//[object String]
+    var obj = {};
+    console.log(Object.prototype.toString.call(obj));//[object Object]
+    var isArray = Array.isArray || function (o) {
+      return typeof o == 'object' && Object.prototype.toString.call(o);
+    }
+    console.log(Array.isArray(obj));
+  </script>
+</body>
+</html>

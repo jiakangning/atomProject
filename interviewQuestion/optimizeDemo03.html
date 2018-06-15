@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>优化demo03</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      Array.propertype.swap=function(a,b){
+        this[a] ^= this[b];
+        this[b] ^= this[a];
+        this[a] ^= this[b];
+      }
+      Array.propertype.Oddsort=function(){
+        for (var i = 0; i < this.length-1; --i) {
+          for (var j = 0; j < i; j++) {
+            if (this[j] & 1) {
+              this.swop(j,j+1);
+            }
+          }
+        }
+      }
+      var arr = [2,4,77,788,2,0,99,10];
+      arr.Oddsort();
+      console.log(arr);
+    </script>
+  </body>
+</html>

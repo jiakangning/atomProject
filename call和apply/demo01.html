@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>call和apply</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function demo1(){alert('我是demo1');}
+      function demo2(){console.log(Object.keys())}
+      function demo3(){alert('我是demo3');}
+      function demo4(){alert('我是demo4');}
+      function demo5(){alert('我是demo5');}
+      var demo06 = {
+        name:'demo06',
+        sayName:function (){
+          return this.name;
+        }
+      }
+      var demo = {
+        sex:'women',
+        setSex:function (){
+          return this.sex = 'men';
+        }
+      }
+      window.onload=function (){
+        demo2.call(demo);
+      }
+    </script>
+  </body>
+</html>

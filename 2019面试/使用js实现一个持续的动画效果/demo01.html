@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>js实现一个持续的动画效果</title>
+    <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+      .ee{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ee" id="e">
+
+    </div>
+    <script type="text/javascript">
+      var e = document.getElementById('e');
+      var flag = true;
+      var left = 0;
+      setInterval(()=>{
+        left = 0?flag=true:left==100?flag = false:''
+        flag ? e.style.left = '${left++}px':e.style.left = '${left--}px'
+      },1000/60)
+    </script>
+  </body>
+</html>

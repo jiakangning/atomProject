@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>节点关系</title>
+</head>
+<body>
+  <!--
+  文档中所有的节点之间都存在这样或那样的关系。节点间的各种关系可以用传统的家族关系来描述，相当于把文档树比喻成家谱。
+
+  每个节点都有一个 childNodes 属性，其中保存着一个 NodeList 对象。
+  NodeList 是一种类数组对象，用于保存一组有序的节点，可以通过位置来访问这些节点。
+  请注意，虽然可以通过方括号语法来访问 NodeList 的值，
+  而且这个对象也有 length 属性，但它并不是 Array 的实例。
+  NodeList 对象的独特之处在于，它实际上是基于 DOM 结构动态执行查询的结果，
+  因此 DOM 结构的变化能够自动反映在 NodeList 对象中。
+  下面的例子展示了如何访问保存在 NodeList 中的节点——可以通过方括号，也可以使用 item() 方法。
+ -->
+<div class="" id="test">
+<input type="text" name="" value="" id="inp">
+</div>
+ <script type="text/javascript">
+ /*
+ Node.ELEMENT_NODE(1)；
+ Node.ATTRIBUTE_NODE(2)；
+ Node.TEXT_NODE(3)；
+ Node.CDATA_SECTION_NODE(4)；
+ Node.ENTITY_REFERENCE_NODE(5)；
+ Node.ENTITY_NODE(6)；
+ Node.PROCESSING_INSTRUCTION_NODE(7)；
+ Node.COMMENT_NODE(8)；
+ Node.DOCUMENT_NODE(9)；
+ Node.DOCUMENT_TYPE_NODE(10)；
+ Node.DOCUMENT_FRAGMENT_NODE(11)；
+ Node.NOTATION_NODE(12)。
+
+ */
+ // 每个节点都有一个 parentNode 属性，该属性指向文档树中的父节点。
+ // 包含在 childNodes 列表中的所有节点都具有相同的父节点，因此它们的 parentNode 属性都指向同一个节点。
+ // 此外，包含在 childNodes 列表中的每个节点相互之间都是同胞节点。
+ // 通过使用列表中每个节点的 previousSibling 和 nextSibling 属性，可以访问同一列表中的其他节点。
+ // 列表中第一个节点的 previousSibling 属性值为 null，而列表中最后一个节点的 nextSibling 属性的值同样也为 null，
+ // 如下面的例子所示：
+
+if (someNode.nextSibling === null){
+  console.log("Last node in the parent’s childNodes list.");
+} else if (someNode.previousSibling === null){
+  console.log("First node in the parent’s childNodes list.");
+}
+
+ </script>
+</body>
+</html>
